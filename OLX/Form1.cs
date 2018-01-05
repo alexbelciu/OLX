@@ -18,6 +18,7 @@ namespace OLX
     {
         DataClasses1DataContext dbContext;
         string mainCategory= "Auto, Moto, Ambarcatiuni";
+        string subCategory = "Toate";
         public Form1()
         {
             
@@ -36,7 +37,7 @@ namespace OLX
             judet = textBox1.Text;
             var projection = (from rep in dbContext.DB_RO_COUNTies where rep.NUME_JUDET==judet
                               select new { rep.ID,rep.NUME_JUDET }  ).ToList();
-             dataGridView1.DataSource = projection;
+            dataGridView1.DataSource = projection;
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -182,6 +183,14 @@ namespace OLX
                 i++;
             }
             connection.Close();
+        }
+
+       
+      
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
