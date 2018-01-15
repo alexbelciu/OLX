@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OLX" Class="OLXDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=CRISTI-PC\MSSQLSERVER2012;Initial Catalog=OLX;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="OLX.Properties.Settings" SettingsPropertyName="OLXConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ACCOUNT_FAVORITE_ANOUNCES" Member="ACCOUNT_FAVORITE_ANOUNCEs">
+    <Type Name="ACCOUNT_FAVORITE_ANOUNCE">
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="DB_ANOUNCE_ACCOUNT_FAVORITE_ANOUNCE" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+      <Association Name="DB_USER_ACCOUNT_FAVORITE_ANOUNCE" Member="DB_USER" ThisKey="ID_USER" OtherKey="ID" Type="DB_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ACCOUNT_MESSAGES" Member="ACCOUNT_MESSAGEs">
+    <Type Name="ACCOUNT_MESSAGE">
+      <Column Name="ID_USER_CURENT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USER_DESTINATAR" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MESAJ" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DATA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="DB_USER_ACCOUNT_MESSAGE" Member="DB_USER" ThisKey="ID_USER_DESTINATAR" OtherKey="ID" Type="DB_USER" IsForeignKey="true" />
+      <Association Name="DB_USER_ACCOUNT_MESSAGE1" Member="DB_USER1" ThisKey="ID_USER_CURENT" OtherKey="ID" Type="DB_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ANOUNCE_ACCSES_STATS" Member="ANOUNCE_ACCSES_STATs">
+    <Type Name="ANOUNCE_ACCSES_STAT">
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NR_VIZUALIZARI" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NR_ACCES_TELEFON" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_ACCSES_STAT" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ANOUNCE_AUTO_DETAILS" Member="ANOUNCE_AUTO_DETAILs">
+    <Type Name="ANOUNCE_AUTO_DETAIL">
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_MARCA_MASINA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MODEL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CULOARE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CUTIE_VITEZE" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="AN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RULAJ_KM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CAROSERIE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="COMBUSTIBIL" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CAPACITATE_MOTOR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="AUTO_BRAND_ANOUNCE_AUTO_DETAIL" Member="AUTO_BRAND" ThisKey="ID_MARCA_MASINA" OtherKey="ID" Type="AUTO_BRAND" IsForeignKey="true" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_AUTO_DETAIL" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ANOUNCE_FASHION_DETAILS" Member="ANOUNCE_FASHION_DETAILs">
+    <Type Name="ANOUNCE_FASHION_DETAIL">
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIP_ARTICOL_VESTIMENTAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MARIME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CULOARE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MARCA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_FASHION_DETAIL" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ANOUNCE_HOUSE_DETAILS" Member="ANOUNCE_HOUSE_DETAILs">
+    <Type Name="ANOUNCE_HOUSE_DETAIL">
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NR_CAMERE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SUPRAFATA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="COMPARTIMENTARE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TIP_VANZATOR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PARCARE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SUPRAFATA_CURTE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_HOUSE_DETAIL" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ANOUNCE_VOTES" Member="ANOUNCE_VOTEs">
+    <Type Name="ANOUNCE_VOTE">
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VOT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_VOTE" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+      <Association Name="DB_USER_ANOUNCE_VOTE" Member="DB_USER" ThisKey="ID_USER" OtherKey="ID" Type="DB_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ANOUNCE_WORK_DETAILS" Member="ANOUNCE_WORK_DETAILs">
+    <Type Name="ANOUNCE_WORK_DETAIL">
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIP_MUNCA" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="TIP_MOBILITATE" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="SALARIU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_WORK_DETAIL" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ANOUNCES_COMMENTS" Member="ANOUNCES_COMMENTs">
+    <Type Name="ANOUNCES_COMMENT">
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COMENTARIU" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DATA_ADAUGAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="DB_ANOUNCE_ANOUNCES_COMMENT" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+      <Association Name="DB_USER_ANOUNCES_COMMENT" Member="DB_USER" ThisKey="ID_USER" OtherKey="ID" Type="DB_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AUTO_BRANDS" Member="AUTO_BRANDs">
+    <Type Name="AUTO_BRAND">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NUME_MARCA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="AUTO_BRAND_ANOUNCE_AUTO_DETAIL" Member="ANOUNCE_AUTO_DETAILs" ThisKey="ID" OtherKey="ID_MARCA_MASINA" Type="ANOUNCE_AUTO_DETAIL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_ANOUNCES" Member="DB_ANOUNCEs">
+    <Type Name="DB_ANOUNCE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TITLU" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DATA_ADAUGAT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="STARE_PRODUS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CATEGORIE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_SUBCATEGORIE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRET" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NEGOCIABIL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DETALII" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LOC_INTALNIRE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="POZA" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="DB_ANOUNCE_ACCOUNT_FAVORITE_ANOUNCE" Member="ACCOUNT_FAVORITE_ANOUNCEs" ThisKey="ID" OtherKey="ID_ANUNT" Type="ACCOUNT_FAVORITE_ANOUNCE" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_ACCSES_STAT" Member="ANOUNCE_ACCSES_STATs" ThisKey="ID" OtherKey="ID_ANUNT" Type="ANOUNCE_ACCSES_STAT" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_AUTO_DETAIL" Member="ANOUNCE_AUTO_DETAILs" ThisKey="ID" OtherKey="ID_ANUNT" Type="ANOUNCE_AUTO_DETAIL" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_FASHION_DETAIL" Member="ANOUNCE_FASHION_DETAILs" ThisKey="ID" OtherKey="ID_ANUNT" Type="ANOUNCE_FASHION_DETAIL" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_HOUSE_DETAIL" Member="ANOUNCE_HOUSE_DETAILs" ThisKey="ID" OtherKey="ID_ANUNT" Type="ANOUNCE_HOUSE_DETAIL" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_VOTE" Member="ANOUNCE_VOTEs" ThisKey="ID" OtherKey="ID_ANUNT" Type="ANOUNCE_VOTE" />
+      <Association Name="DB_ANOUNCE_ANOUNCE_WORK_DETAIL" Member="ANOUNCE_WORK_DETAILs" ThisKey="ID" OtherKey="ID_ANUNT" Type="ANOUNCE_WORK_DETAIL" />
+      <Association Name="DB_ANOUNCE_ANOUNCES_COMMENT" Member="ANOUNCES_COMMENTs" ThisKey="ID" OtherKey="ID_ANUNT" Type="ANOUNCES_COMMENT" />
+      <Association Name="DB_ANOUNCE_DB_ASSOCIATED_WORD" Member="DB_ASSOCIATED_WORDs" ThisKey="ID" OtherKey="ID_ANUNT" Type="DB_ASSOCIATED_WORD" />
+      <Association Name="DB_ANOUNCE_DB_PHOTO" Member="DB_PHOTOs" ThisKey="ID" OtherKey="ID_ANUNT" Type="DB_PHOTO" />
+      <Association Name="DB_ANOUNCE_DB_PROMOTED_ANOUNCE" Member="DB_PROMOTED_ANOUNCEs" ThisKey="ID" OtherKey="ID_ANUNT" Type="DB_PROMOTED_ANOUNCE" />
+      <Association Name="DB_SEARCH_CATEGORy_DB_ANOUNCE" Member="DB_SEARCH_CATEGORy" ThisKey="ID_CATEGORIE" OtherKey="ID" Type="DB_SEARCH_CATEGORy" IsForeignKey="true" />
+      <Association Name="DB_SEARCH_SUBCATEGORy_DB_ANOUNCE" Member="DB_SEARCH_SUBCATEGORy" ThisKey="ID_SUBCATEGORIE" OtherKey="ID" Type="DB_SEARCH_SUBCATEGORy" IsForeignKey="true" />
+      <Association Name="DB_USER_DB_ANOUNCE" Member="DB_USER" ThisKey="ID_USER" OtherKey="ID" Type="DB_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_ASSOCIATED_WORDS" Member="DB_ASSOCIATED_WORDs">
+    <Type Name="DB_ASSOCIATED_WORD">
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CUVANT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DB_ANOUNCE_DB_ASSOCIATED_WORD" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+      <Association Name="DB_SEARCH_WORD_DB_ASSOCIATED_WORD" Member="DB_SEARCH_WORD" ThisKey="ID_CUVANT" OtherKey="ID_CUVANT" Type="DB_SEARCH_WORD" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_LOGINS" Member="DB_LOGINs">
+    <Type Name="DB_LOGIN">
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATA_LOGAT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATA_DELOGAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="DB_USER_DB_LOGIN" Member="DB_USER" ThisKey="ID_USER" OtherKey="ID" Type="DB_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_PASSWORDS" Member="DB_PASSWORDs">
+    <Type Name="DB_PASSWORD">
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PAROLA" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DB_USER_DB_PASSWORD" Member="DB_USER" ThisKey="ID_USER" OtherKey="ID" Type="DB_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_PHOTOS" Member="DB_PHOTOs">
+    <Type Name="DB_PHOTO">
+      <Column Name="ID_POZA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EVIDENTIATA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="POZA" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="DB_ANOUNCE_DB_PHOTO" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_PROMOTE_PACKAGES" Member="DB_PROMOTE_PACKAGEs">
+    <Type Name="DB_PROMOTE_PACKAGE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NUME_PACHET" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SUMA" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="NR_ZILE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DB_PROMOTE_PACKAGE_DB_PROMOTED_ANOUNCE" Member="DB_PROMOTED_ANOUNCEs" ThisKey="ID" OtherKey="ID_PACHET" Type="DB_PROMOTED_ANOUNCE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_PROMOTED_ANOUNCES" Member="DB_PROMOTED_ANOUNCEs">
+    <Type Name="DB_PROMOTED_ANOUNCE">
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PACHET" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DATA_START" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="DB_ANOUNCE_DB_PROMOTED_ANOUNCE" Member="DB_ANOUNCE" ThisKey="ID_ANUNT" OtherKey="ID" Type="DB_ANOUNCE" IsForeignKey="true" />
+      <Association Name="DB_PROMOTE_PACKAGE_DB_PROMOTED_ANOUNCE" Member="DB_PROMOTE_PACKAGE" ThisKey="ID_PACHET" OtherKey="ID" Type="DB_PROMOTE_PACKAGE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_RO_CITIES" Member="DB_RO_CITies">
+    <Type Name="DB_RO_CITy">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NUME_ORAS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_JUDET" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DB_RO_CITy_DB_USER" Member="DB_USERs" ThisKey="ID" OtherKey="ID_ORAS" Type="DB_USER" />
+      <Association Name="DB_RO_CITy_USER_SEARCH_SESSION" Member="USER_SEARCH_SESSIONs" ThisKey="ID" OtherKey="ID_ORAS" Type="USER_SEARCH_SESSION" />
+      <Association Name="DB_RO_COUNTy_DB_RO_CITy" Member="DB_RO_COUNTy" ThisKey="ID_JUDET" OtherKey="ID" Type="DB_RO_COUNTy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_RO_COUNTIES" Member="DB_RO_COUNTies">
+    <Type Name="DB_RO_COUNTy">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NUME_JUDET" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DB_RO_COUNTy_DB_RO_CITy" Member="DB_RO_CITies" ThisKey="ID" OtherKey="ID_JUDET" Type="DB_RO_CITy" />
+      <Association Name="DB_RO_COUNTy_DB_USER" Member="DB_USERs" ThisKey="ID" OtherKey="ID_JUDET" Type="DB_USER" />
+      <Association Name="DB_RO_COUNTy_USER_SEARCH_SESSION" Member="USER_SEARCH_SESSIONs" ThisKey="ID" OtherKey="ID_JUDET" Type="USER_SEARCH_SESSION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_SEARCH_CATEGORIES" Member="DB_SEARCH_CATEGORies">
+    <Type Name="DB_SEARCH_CATEGORy">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NUME_CATEGORIE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NR_ACCESARI" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DB_SEARCH_CATEGORy_DB_ANOUNCE" Member="DB_ANOUNCEs" ThisKey="ID" OtherKey="ID_CATEGORIE" Type="DB_ANOUNCE" />
+      <Association Name="DB_SEARCH_CATEGORy_DB_SEARCH_SUBCATEGORy" Member="DB_SEARCH_SUBCATEGORies" ThisKey="ID" OtherKey="ID_CATEGORIE" Type="DB_SEARCH_SUBCATEGORy" />
+      <Association Name="DB_SEARCH_CATEGORy_USER_SEARCH_SESSION" Member="USER_SEARCH_SESSIONs" ThisKey="ID" OtherKey="ID_CATEGORIE" Type="USER_SEARCH_SESSION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_SEARCH_SUBCATEGORIES" Member="DB_SEARCH_SUBCATEGORies">
+    <Type Name="DB_SEARCH_SUBCATEGORy">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NUME_SUBCATEGORIE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CATEGORIE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_REFERINTA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DB_SEARCH_SUBCATEGORy_DB_ANOUNCE" Member="DB_ANOUNCEs" ThisKey="ID" OtherKey="ID_SUBCATEGORIE" Type="DB_ANOUNCE" />
+      <Association Name="DB_SEARCH_SUBCATEGORy_DB_SEARCH_SUBCATEGORy" Member="DB_SEARCH_SUBCATEGORies" ThisKey="ID" OtherKey="ID_REFERINTA" Type="DB_SEARCH_SUBCATEGORy" />
+      <Association Name="DB_SEARCH_CATEGORy_DB_SEARCH_SUBCATEGORy" Member="DB_SEARCH_CATEGORy" ThisKey="ID_CATEGORIE" OtherKey="ID" Type="DB_SEARCH_CATEGORy" IsForeignKey="true" />
+      <Association Name="DB_SEARCH_SUBCATEGORy_DB_SEARCH_SUBCATEGORy" Member="DB_SEARCH_SUBCATEGORy1" ThisKey="ID_REFERINTA" OtherKey="ID" Type="DB_SEARCH_SUBCATEGORy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_SEARCH_TEXTS" Member="DB_SEARCH_TEXTs">
+    <Type Name="DB_SEARCH_TEXT">
+      <Column Name="TEXT_CAUTAT" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DATA_CAUTAT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NR_CAUTARI_SIMILARE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_SEARCH_WORDS" Member="DB_SEARCH_WORDs">
+    <Type Name="DB_SEARCH_WORD">
+      <Column Name="ID_CUVANT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUVANT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DB_SEARCH_WORD_DB_ASSOCIATED_WORD" Member="DB_ASSOCIATED_WORDs" ThisKey="ID_CUVANT" OtherKey="ID_CUVANT" Type="DB_ASSOCIATED_WORD" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB_USERS" Member="DB_USERs">
+    <Type Name="DB_USER">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NUME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TELEFON" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_JUDET" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ORAS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DB_USER_ACCOUNT_FAVORITE_ANOUNCE" Member="ACCOUNT_FAVORITE_ANOUNCEs" ThisKey="ID" OtherKey="ID_USER" Type="ACCOUNT_FAVORITE_ANOUNCE" />
+      <Association Name="DB_USER_ACCOUNT_MESSAGE" Member="ACCOUNT_MESSAGEs" ThisKey="ID" OtherKey="ID_USER_DESTINATAR" Type="ACCOUNT_MESSAGE" />
+      <Association Name="DB_USER_ACCOUNT_MESSAGE1" Member="ACCOUNT_MESSAGEs1" ThisKey="ID" OtherKey="ID_USER_CURENT" Type="ACCOUNT_MESSAGE" />
+      <Association Name="DB_USER_ANOUNCE_VOTE" Member="ANOUNCE_VOTEs" ThisKey="ID" OtherKey="ID_USER" Type="ANOUNCE_VOTE" />
+      <Association Name="DB_USER_ANOUNCES_COMMENT" Member="ANOUNCES_COMMENTs" ThisKey="ID" OtherKey="ID_USER" Type="ANOUNCES_COMMENT" />
+      <Association Name="DB_USER_DB_ANOUNCE" Member="DB_ANOUNCEs" ThisKey="ID" OtherKey="ID_USER" Type="DB_ANOUNCE" />
+      <Association Name="DB_USER_DB_LOGIN" Member="DB_LOGINs" ThisKey="ID" OtherKey="ID_USER" Type="DB_LOGIN" />
+      <Association Name="DB_USER_DB_PASSWORD" Member="DB_PASSWORDs" ThisKey="ID" OtherKey="ID_USER" Type="DB_PASSWORD" />
+      <Association Name="DB_RO_COUNTy_DB_USER" Member="DB_RO_COUNTy" ThisKey="ID_JUDET" OtherKey="ID" Type="DB_RO_COUNTy" IsForeignKey="true" />
+      <Association Name="DB_RO_CITy_DB_USER" Member="DB_RO_CITy" ThisKey="ID_ORAS" OtherKey="ID" Type="DB_RO_CITy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USER_SEARCH_RESULTS" Member="USER_SEARCH_RESULTs">
+    <Type Name="USER_SEARCH_RESULT">
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TITLU" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PROPRIETAR" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JUDET" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORAS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRET" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="NEGOCIABIL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="POZA" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="USER_SEARCH_SESSION_USER_SEARCH_RESULT" Member="USER_SEARCH_SESSION" ThisKey="ID_USER" OtherKey="ID_USER" Type="USER_SEARCH_SESSION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USER_SEARCH_SESSIONS" Member="USER_SEARCH_SESSIONs">
+    <Type Name="USER_SEARCH_SESSION">
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_ORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_JUDET" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_CATEGORIE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRET_MIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRET_MAX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONEDA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TIP_ORDONARE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEXT_CAUTAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="USER_SEARCH_SESSION_USER_SEARCH_RESULT" Member="USER_SEARCH_RESULTs" ThisKey="ID_USER" OtherKey="ID_USER" Type="USER_SEARCH_RESULT" />
+      <Association Name="DB_RO_CITy_USER_SEARCH_SESSION" Member="DB_RO_CITy" ThisKey="ID_ORAS" OtherKey="ID" Type="DB_RO_CITy" IsForeignKey="true" />
+      <Association Name="DB_RO_COUNTy_USER_SEARCH_SESSION" Member="DB_RO_COUNTy" ThisKey="ID_JUDET" OtherKey="ID" Type="DB_RO_COUNTy" IsForeignKey="true" />
+      <Association Name="DB_SEARCH_CATEGORy_USER_SEARCH_SESSION" Member="DB_SEARCH_CATEGORy" ThisKey="ID_CATEGORIE" OtherKey="ID" Type="DB_SEARCH_CATEGORy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spAccesAnounce" Method="spAccesAnounce">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAccesCategory" Method="spAccesCategory">
+    <Parameter Name="id_categorie" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddComentariu" Method="spAddComentariu">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="comentariu" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddPhoto" Method="spAddPhoto">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="evidentiata" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="poza" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spADDprod" Method="spADDprod">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="titlu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="stare" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="categorie" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="subcategorie" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="pret" Type="System.Int32" DbType="Int" />
+    <Parameter Name="negociabil" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="detalii" Type="System.String" DbType="Text" />
+    <Parameter Name="loc_intalnire" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="poza" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spADDprod_details_auto" Method="spADDprod_details_auto">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="titlu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="marca" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="model" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="culoare" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="cutie_viteze" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="an" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="rulaj" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="caroserie" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="combustibil" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="capacitate_motor" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spADDprod_details_fashion" Method="spADDprod_details_fashion">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="titlu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tip_articol_vestimentar" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="marime" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="culoare" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="marca" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spADDprod_details_house" Method="spADDprod_details_house">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="titlu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="nr_camere" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="suprafata" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="compartimentare" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="an" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tip_vanzator" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="parcare" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="suprafata_curte" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spADDprod_details_work" Method="spADDprod_details_work">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="titlu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tip_munca" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tip_mobilitate" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="salariu" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddPromotedAnounce" Method="spAddPromotedAnounce">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nume_pachet" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddSearchFilterCategorie" Method="spAddSearchFilterCategorie">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="categorie" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddSearchFilterCity" Method="spAddSearchFilterCity">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="oras" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddSearchFilterCounty" Method="spAddSearchFilterCounty">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="judet" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddSearchFilterMaxPrice" Method="spAddSearchFilterMaxPrice">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="pret_maxim" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddSearchFilterMinPrice" Method="spAddSearchFilterMinPrice">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="pret_minim" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddSearchFilterMoneda" Method="spAddSearchFilterMoneda">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="moneda" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddSearchFilterOrdonareRezultate" Method="spAddSearchFilterOrdonareRezultate">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ordonare" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddSearchSession" Method="spAddSearchSession">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddSearchText" Method="spAddSearchText">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="text" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spAddToFavorite" Method="spAddToFavorite">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spDeletedOldPromotedAnounces" Method="spDeletedOldPromotedAnounces">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetAnounceComments" Method="spGetAnounceComments">
+    <Parameter Name="ID_anunt" Parameter="iD_anunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetAnounceCommentsResult">
+      <Column Name="COMENTARIU" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DATA_ADAUGAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NUME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetAnounceDetails" Method="spGetAnounceDetails">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetAnounceDetailsResult">
+      <Column Name="NUME_MARCA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MODEL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CULOARE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CUTIE_VITEZE" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="AN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RULAJ_KM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CAROSERIE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="COMBUSTIBIL" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CAPACITATE_MOTOR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetAsociatedWords" Method="spGetAsociatedWords">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetAsociatedWordsResult">
+      <Column Name="CUVANT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetAutoBrands" Method="spGetAutoBrands">
+    <ElementType Name="spGetAutoBrandsResult">
+      <Column Name="NUME_MARCA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetCategorieAnunt" Method="spGetCategorieAnunt">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetCategorieAnuntResult">
+      <Column Name="NUME_CATEGORIE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChatsList" Method="spGetChatsList">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spGetChatsListResult">
+      <Column Name="ID_USER_CURENT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetFavoriteAnounces" Method="spGetFavoriteAnounces">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spGetFavoriteAnouncesResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TITLU" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_CATEGORIE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_SUBCATEGORIE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_ORAS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_JUDET" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRET" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NEGOCIABIL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetFirstDisplay" Method="spGetFirstDisplay">
+    <ElementType Name="spGetFirstDisplayResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TITLU" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_CATEGORIE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_SUBCATEGORIE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_ORAS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_JUDET" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRET" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NEGOCIABIL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetIDAnunt" Method="spGetIDAnunt">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="titlu" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetIDAnunturiCarePotrivescCuvantul" Method="spGetIDAnunturiCarePotrivescCuvantul">
+    <Parameter Name="cuvant" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spGetIDAnunturiCarePotrivescCuvantulResult">
+      <Column Name="ID_ANUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetIDProd" Method="spGetIDProd">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="titlu" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetIDUserAnunt" Method="spGetIDUserAnunt">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetIDUserAnuntResult">
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetJudete" Method="spGetJudete">
+    <ElementType Name="spGetJudeteResult">
+      <Column Name="NUME_JUDET" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetLastMessage" Method="spGetLastMessage">
+    <Parameter Name="id_user_eu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="id_user_corespondent" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spGetLastMessageResult">
+      <Column Name="MESAJ" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetLogedInUsers" Method="spGetLogedInUsers">
+    <ElementType Name="spGetLogedInUsersResult">
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetMedieUser" Method="spGetMedieUser">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spGetMedieUserResult">
+      <Column Name="MEDIE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetMedieVoturi" Method="spGetMedieVoturi">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetMedieVoturiResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetMessagesBetweenUsers" Method="spGetMessagesBetweenUsers">
+    <Parameter Name="id_user_eu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="id_user_corespondent" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spGetMessagesBetweenUsersResult">
+      <Column Name="DATA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MESAJ" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetMiniaturaProd" Method="spGetMiniaturaProd">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+  </Function>
+  <Function Name="dbo.spGetNrVoturi" Method="spGetNrVoturi">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetNrVoturiResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetNumeUser" Method="spGetNumeUser">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spGetNumeUserResult">
+      <Column Name="NUME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetOraseDinJudet" Method="spGetOraseDinJudet">
+    <Parameter Name="judet" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spGetOraseDinJudetResult">
+      <Column Name="NUME_ORAS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetPozeAnunt" Method="spGetPozeAnunt">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetPozeAnuntResult">
+      <Column Name="POZA" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetUserAllInfo" Method="spGetUserAllInfo">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="spGetUserAllInfoResult">
+      <Column Name="NUME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TELEFON" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_ORAS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_JUDET" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetUserBasicInfo" Method="spGetUserBasicInfo">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetUserBasicInfoResult">
+      <Column Name="NUME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_ORAS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NUME_JUDET" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetUserExtraInfo" Method="spGetUserExtraInfo">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetVotUserPentruAnuntCurent" Method="spGetVotUserPentruAnuntCurent">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetVotUserPentruAnuntCurentResult">
+      <Column Name="VOT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInsertAsociatedWord" Method="spInsertAsociatedWord">
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cuvant" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spInsertSearchResult" Method="spInsertSearchResult">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spInsertSearchText" Method="spInsertSearchText">
+    <Parameter Name="text" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spInsertSearchWord" Method="spInsertSearchWord">
+    <Parameter Name="cuvant" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spSendMesaj" Method="spSendMesaj">
+    <Parameter Name="id_user_curent" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="id_user_destinatar" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="mesaj" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spVerificaUserToAnounce" Method="spVerificaUserToAnounce">
+    <Parameter Name="idAnunt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spVerificaUserToAnounceResult">
+      <Column Name="ID_USER" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.tranAddVoteAnounce" Method="tranAddVoteAnounce">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="id_anunt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nr_stele" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tranLogIn" Method="tranLogIn">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="hash_parola" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tranLogOut" Method="tranLogOut">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tranSignIn" Method="tranSignIn">
+    <Parameter Name="id_user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="nume" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="telefon" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="judet" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="oras" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="hash_parola" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

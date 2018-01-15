@@ -1,0 +1,2695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OLXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.ACCOUNT_FAVORITE_ANOUNCES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ACCOUNT_FAVORITE_ANOUNCES">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_USER" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_ANUNT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.ACCOUNT_MESSAGES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ACCOUNT_MESSAGES">
+          <Key>
+            <PropertyRef Name="ID_USER_CURENT" />
+            <PropertyRef Name="ID_USER_DESTINATAR" />
+            <PropertyRef Name="MESAJ" />
+            <PropertyRef Name="DATA" />
+          </Key>
+          <Property Name="ID_USER_CURENT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_USER_DESTINATAR" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MESAJ" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DATA" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.ANOUNCE_ACCSES_STATS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ANOUNCE_ACCSES_STATS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+            <PropertyRef Name="NR_VIZUALIZARI" />
+            <PropertyRef Name="NR_ACCES_TELEFON" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="int" Nullable="false" />
+          <Property Name="NR_VIZUALIZARI" Type="int" Nullable="false" />
+          <Property Name="NR_ACCES_TELEFON" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.ANOUNCE_AUTO_DETAILS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ANOUNCE_AUTO_DETAILS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="int" Nullable="false" />
+          <Property Name="ID_MARCA_MASINA" Type="int" />
+          <Property Name="MODEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="CULOARE" Type="nvarchar" MaxLength="20" />
+          <Property Name="CUTIE_VITEZE" Type="nvarchar" MaxLength="9" />
+          <Property Name="AN" Type="int" />
+          <Property Name="RULAJ_KM" Type="int" />
+          <Property Name="CAROSERIE" Type="nvarchar" MaxLength="20" />
+          <Property Name="COMBUSTIBIL" Type="nvarchar" MaxLength="20" />
+          <Property Name="CAPACITATE_MOTOR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.ANOUNCE_FASHION_DETAILS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ANOUNCE_FASHION_DETAILS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="int" Nullable="false" />
+          <Property Name="TIP_ARTICOL_VESTIMENTAR" Type="nvarchar" MaxLength="50" />
+          <Property Name="MARIME" Type="int" />
+          <Property Name="CULOARE" Type="nvarchar" MaxLength="50" />
+          <Property Name="MARCA" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.ANOUNCE_HOUSE_DETAILS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ANOUNCE_HOUSE_DETAILS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="int" Nullable="false" />
+          <Property Name="NR_CAMERE" Type="int" />
+          <Property Name="SUPRAFATA" Type="int" />
+          <Property Name="COMPARTIMENTARE" Type="nvarchar" MaxLength="50" />
+          <Property Name="AN" Type="int" />
+          <Property Name="TIP_VANZATOR" Type="nvarchar" MaxLength="50" />
+          <Property Name="PARCARE" Type="bit" />
+          <Property Name="SUPRAFATA_CURTE" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.ANOUNCE_VOTES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ANOUNCE_VOTES">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_USER" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_ANUNT" Type="int" Nullable="false" />
+          <Property Name="VOT" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.ANOUNCE_WORK_DETAILS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ANOUNCE_WORK_DETAILS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="int" Nullable="false" />
+          <Property Name="TIP_MUNCA" Type="nvarchar" MaxLength="9" />
+          <Property Name="TIP_MOBILITATE" Type="nvarchar" MaxLength="9" />
+          <Property Name="SALARIU" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.ANOUNCES_COMMENTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ANOUNCES_COMMENTS">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_USER" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_ANUNT" Type="int" Nullable="false" />
+          <Property Name="COMENTARIU" Type="text" />
+          <Property Name="DATA_ADAUGAT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AUTO_BRANDS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NUME_MARCA" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DB_ANOUNCES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_USER" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TITLU" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DATA_ADAUGAT" Type="datetime" Nullable="false" />
+          <Property Name="STARE_PRODUS" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_CATEGORIE" Type="int" Nullable="false" />
+          <Property Name="ID_SUBCATEGORIE" Type="int" Nullable="false" />
+          <Property Name="PRET" Type="int" Nullable="false" />
+          <Property Name="NEGOCIABIL" Type="bit" Nullable="false" />
+          <Property Name="DETALII" Type="text" />
+          <Property Name="LOC_INTALNIRE" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.DB_ASSOCIATED_WORDS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DB_ASSOCIATED_WORDS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+            <PropertyRef Name="ID_CUVANT" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="int" Nullable="false" />
+          <Property Name="ID_CUVANT" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.DB_LOGINS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DB_LOGINS">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="DATA_LOGAT" />
+          </Key>
+          <Property Name="ID_USER" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DATA_LOGAT" Type="datetime" Nullable="false" />
+          <Property Name="DATA_DELOGAT" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.DB_PASSWORDS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DB_PASSWORDS">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="PAROLA" />
+          </Key>
+          <Property Name="ID_USER" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PAROLA" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DB_PHOTOS">
+          <Key>
+            <PropertyRef Name="ID_POZA" />
+          </Key>
+          <Property Name="ID_POZA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_ANUNT" Type="int" Nullable="false" />
+          <Property Name="CALE_POZA" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EVIDENTIATA" Type="bit" Nullable="false" />
+          <Property Name="POZA" Type="image" />
+        </EntityType>
+        <EntityType Name="DB_PROMOTE_PACKAGES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NUME_PACHET" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SUMA" Type="money" Nullable="false" />
+          <Property Name="NR_ZILE" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.DB_PROMOTED_ANOUNCES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DB_PROMOTED_ANOUNCES">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+            <PropertyRef Name="ID_PACHET" />
+            <PropertyRef Name="DATA_START" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="int" Nullable="false" />
+          <Property Name="ID_PACHET" Type="int" Nullable="false" />
+          <Property Name="DATA_START" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DB_RO_CITIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NUME_ORAS" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_JUDET" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DB_RO_COUNTIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NUME_JUDET" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DB_SEARCH_CATEGORIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NUME_CATEGORIE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NR_ACCESARI" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DB_SEARCH_SUBCATEGORIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NUME_SUBCATEGORIE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ID_CATEGORIE" Type="int" Nullable="false" />
+          <Property Name="ID_REFERINTA" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.DB_SEARCH_TEXTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DB_SEARCH_TEXTS">
+          <Key>
+            <PropertyRef Name="TEXT_CAUTAT" />
+            <PropertyRef Name="DATA_CAUTAT" />
+            <PropertyRef Name="NR_CAUTARI_SIMILARE" />
+          </Key>
+          <Property Name="TEXT_CAUTAT" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DATA_CAUTAT" Type="datetime" Nullable="false" />
+          <Property Name="NR_CAUTARI_SIMILARE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DB_SEARCH_WORDS">
+          <Key>
+            <PropertyRef Name="ID_CUVANT" />
+          </Key>
+          <Property Name="ID_CUVANT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUVANT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DB_USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NUME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TELEFON" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID_JUDET" Type="int" Nullable="false" />
+          <Property Name="ID_ORAS" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OLX.dbo.USER_SEARCH_SESSIONS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="USER_SEARCH_SESSIONS">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+          </Key>
+          <Property Name="ID_USER" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_ORAS" Type="int" />
+          <Property Name="ID_JUDET" Type="int" />
+          <Property Name="ID_CATEGORIE" Type="int" />
+          <Property Name="PRET_MIN" Type="int" />
+          <Property Name="PRET_MAX" Type="int" />
+          <Property Name="MONEDA" Type="nvarchar" MaxLength="50" />
+          <Property Name="TIP_VANZATOR" Type="nvarchar" MaxLength="50" />
+          <Property Name="TIP_ORDONARE" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEXT_CAUTAT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_ACCESARI_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_ACCSES_STATS" Type="Self.ANOUNCE_ACCSES_STATS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_ACCSES_STATS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNT_AUTO_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_AUTO_DETAILS" Type="Self.ANOUNCE_AUTO_DETAILS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_AUTO_DETAILS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNT_AUTO_MARCI_MASINI">
+          <End Role="AUTO_BRANDS" Type="Self.AUTO_BRANDS" Multiplicity="0..1" />
+          <End Role="ANOUNCE_AUTO_DETAILS" Type="Self.ANOUNCE_AUTO_DETAILS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AUTO_BRANDS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_AUTO_DETAILS">
+              <PropertyRef Name="ID_MARCA_MASINA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNT_IMOBILIARE_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_HOUSE_DETAILS" Type="Self.ANOUNCE_HOUSE_DETAILS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_HOUSE_DETAILS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNT_MODA_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_FASHION_DETAILS" Type="Self.ANOUNCE_FASHION_DETAILS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_FASHION_DETAILS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNT_MUNCA_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_WORK_DETAILS" Type="Self.ANOUNCE_WORK_DETAILS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_WORK_DETAILS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNTURI_CATEGORII">
+          <End Role="DB_SEARCH_CATEGORIES" Type="Self.DB_SEARCH_CATEGORIES" Multiplicity="1" />
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_CATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_ANOUNCES">
+              <PropertyRef Name="ID_CATEGORIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNTURI_SUBCATEGORII">
+          <End Role="DB_SEARCH_SUBCATEGORIES" Type="Self.DB_SEARCH_SUBCATEGORIES" Multiplicity="1" />
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_SUBCATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_ANOUNCES">
+              <PropertyRef Name="ID_SUBCATEGORIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNTURI_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_ANOUNCES">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMENTARII_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCES_COMMENTS" Type="Self.ANOUNCES_COMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCES_COMMENTS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMENTARII_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="ANOUNCES_COMMENTS" Type="Self.ANOUNCES_COMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCES_COMMENTS">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUVINTE_CHEIE_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="DB_ASSOCIATED_WORDS" Type="Self.DB_ASSOCIATED_WORDS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_ASSOCIATED_WORDS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DB_ASSOCIATED_WORDS_DB_SEARCH_WORDS">
+          <End Role="DB_SEARCH_WORDS" Type="Self.DB_SEARCH_WORDS" Multiplicity="1" />
+          <End Role="DB_ASSOCIATED_WORDS" Type="Self.DB_ASSOCIATED_WORDS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_WORDS">
+              <PropertyRef Name="ID_CUVANT" />
+            </Principal>
+            <Dependent Role="DB_ASSOCIATED_WORDS">
+              <PropertyRef Name="ID_CUVANT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DB_PHOTOS_DB_ANOUNCES">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="DB_PHOTOS" Type="Self.DB_PHOTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_PHOTOS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAVORITE_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ACCOUNT_FAVORITE_ANOUNCES" Type="Self.ACCOUNT_FAVORITE_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ACCOUNT_FAVORITE_ANOUNCES">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAVORITE_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="ACCOUNT_FAVORITE_ANOUNCES" Type="Self.ACCOUNT_FAVORITE_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ACCOUNT_FAVORITE_ANOUNCES">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOGARI_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="DB_LOGINS" Type="Self.DB_LOGINS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_LOGINS">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MESAJEcorespondent_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="ACCOUNT_MESSAGES" Type="Self.ACCOUNT_MESSAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ACCOUNT_MESSAGES">
+              <PropertyRef Name="ID_USER_DESTINATAR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MESAJEinbox_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="ACCOUNT_MESSAGES" Type="Self.ACCOUNT_MESSAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ACCOUNT_MESSAGES">
+              <PropertyRef Name="ID_USER_CURENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORASE_JUDETE">
+          <End Role="DB_RO_COUNTIES" Type="Self.DB_RO_COUNTIES" Multiplicity="1" />
+          <End Role="DB_RO_CITIES" Type="Self.DB_RO_CITIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_RO_COUNTIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_RO_CITIES">
+              <PropertyRef Name="ID_JUDET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAROLE_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="DB_PASSWORDS" Type="Self.DB_PASSWORDS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_PASSWORDS">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROMOVATE_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="DB_PROMOTED_ANOUNCES" Type="Self.DB_PROMOTED_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_PROMOTED_ANOUNCES">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROMOVATE_PACHETE">
+          <End Role="DB_PROMOTE_PACKAGES" Type="Self.DB_PROMOTE_PACKAGES" Multiplicity="1" />
+          <End Role="DB_PROMOTED_ANOUNCES" Type="Self.DB_PROMOTED_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_PROMOTE_PACKAGES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_PROMOTED_ANOUNCES">
+              <PropertyRef Name="ID_PACHET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBCATEGORII_CATEGORII">
+          <End Role="DB_SEARCH_CATEGORIES" Type="Self.DB_SEARCH_CATEGORIES" Multiplicity="1" />
+          <End Role="DB_SEARCH_SUBCATEGORIES" Type="Self.DB_SEARCH_SUBCATEGORIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_CATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_SEARCH_SUBCATEGORIES">
+              <PropertyRef Name="ID_CATEGORIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBCATEGORII_SUBCATEGORII">
+          <End Role="DB_SEARCH_SUBCATEGORIES" Type="Self.DB_SEARCH_SUBCATEGORIES" Multiplicity="0..1" />
+          <End Role="DB_SEARCH_SUBCATEGORIES1" Type="Self.DB_SEARCH_SUBCATEGORIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_SUBCATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_SEARCH_SUBCATEGORIES1">
+              <PropertyRef Name="ID_REFERINTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_SEARCH_SESSIONS_DB_RO_CITIES">
+          <End Role="DB_RO_CITIES" Type="Self.DB_RO_CITIES" Multiplicity="0..1" />
+          <End Role="USER_SEARCH_SESSIONS" Type="Self.USER_SEARCH_SESSIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_RO_CITIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USER_SEARCH_SESSIONS">
+              <PropertyRef Name="ID_ORAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_SEARCH_SESSIONS_DB_RO_COUNTIES">
+          <End Role="DB_RO_COUNTIES" Type="Self.DB_RO_COUNTIES" Multiplicity="0..1" />
+          <End Role="USER_SEARCH_SESSIONS" Type="Self.USER_SEARCH_SESSIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_RO_COUNTIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USER_SEARCH_SESSIONS">
+              <PropertyRef Name="ID_JUDET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_SEARCH_SESSIONS_DB_SEARCH_CATEGORIES">
+          <End Role="DB_SEARCH_CATEGORIES" Type="Self.DB_SEARCH_CATEGORIES" Multiplicity="0..1" />
+          <End Role="USER_SEARCH_SESSIONS" Type="Self.USER_SEARCH_SESSIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_CATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USER_SEARCH_SESSIONS">
+              <PropertyRef Name="ID_CATEGORIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_SEARCH_SESSIONS_DB_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="USER_SEARCH_SESSIONS" Type="Self.USER_SEARCH_SESSIONS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USER_SEARCH_SESSIONS">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERS_JUDETE">
+          <End Role="DB_RO_COUNTIES" Type="Self.DB_RO_COUNTIES" Multiplicity="1" />
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_RO_COUNTIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_USERS">
+              <PropertyRef Name="ID_JUDET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERS_ORASE">
+          <End Role="DB_RO_CITIES" Type="Self.DB_RO_CITIES" Multiplicity="1" />
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_RO_CITIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_USERS">
+              <PropertyRef Name="ID_ORAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VOTURI_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_VOTES" Type="Self.ANOUNCE_VOTES" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_VOTES">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VOTURI_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="0..1" />
+          <End Role="ANOUNCE_VOTES" Type="Self.ANOUNCE_VOTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_VOTES">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spAccesAnounce" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spAccesCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_categorie" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spAddComentariu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="comentariu" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAddPhoto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+          <Parameter Name="cale_foto" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="evidentiata" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spADDprod" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="titlu" Type="nvarchar" Mode="In" />
+          <Parameter Name="stare" Type="nvarchar" Mode="In" />
+          <Parameter Name="categorie" Type="nvarchar" Mode="In" />
+          <Parameter Name="subcategorie" Type="nvarchar" Mode="In" />
+          <Parameter Name="pret" Type="int" Mode="In" />
+          <Parameter Name="negociabil" Type="bit" Mode="In" />
+          <Parameter Name="detalii" Type="text" Mode="In" />
+          <Parameter Name="loc_intalnire" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="spADDprod_details_auto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+          <Parameter Name="marca" Type="nvarchar" Mode="In" />
+          <Parameter Name="model" Type="nvarchar" Mode="In" />
+          <Parameter Name="culoare" Type="nvarchar" Mode="In" />
+          <Parameter Name="cutie_viteze" Type="nvarchar" Mode="In" />
+          <Parameter Name="an" Type="int" Mode="In" />
+          <Parameter Name="rulaj" Type="int" Mode="In" />
+          <Parameter Name="caroserie" Type="nvarchar" Mode="In" />
+          <Parameter Name="combustibil" Type="nvarchar" Mode="In" />
+          <Parameter Name="capacitate_motor" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spADDprod_details_fashion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+          <Parameter Name="tip_articol_vestimentar" Type="nvarchar" Mode="In" />
+          <Parameter Name="marime" Type="int" Mode="In" />
+          <Parameter Name="culoare" Type="nvarchar" Mode="In" />
+          <Parameter Name="marca" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spADDprod_details_house" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+          <Parameter Name="nr_camere" Type="int" Mode="In" />
+          <Parameter Name="suprafata" Type="int" Mode="In" />
+          <Parameter Name="compartimentare" Type="nvarchar" Mode="In" />
+          <Parameter Name="an" Type="int" Mode="In" />
+          <Parameter Name="tip_vanzator" Type="nvarchar" Mode="In" />
+          <Parameter Name="parcare" Type="bit" Mode="In" />
+          <Parameter Name="suprafata_curte" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spADDprod_details_work" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+          <Parameter Name="tip_munca" Type="nvarchar" Mode="In" />
+          <Parameter Name="tip_mobilitate" Type="nvarchar" Mode="In" />
+          <Parameter Name="salariu" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spAddPromotedAnounce" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+          <Parameter Name="nume_pachet" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAddSearchFilterCategorie" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="categorie" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAddSearchFilterCity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="oras" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAddSearchFilterCounty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="judet" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAddSearchFilterMaxPrice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="pret_maxim" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spAddSearchFilterMinPrice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="pret_minim" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spAddSearchFilterMoneda" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="moneda" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAddSearchFilterOrdonareRezultate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="ordonare" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAddSearchFilterTipVanzator" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="vanzator" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAddSearchSession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAddSearchText" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="text" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAddToFavorite" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetAnounceComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetAnounceDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetAsociatedWords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetAutoBrands" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetCategorieAnunt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetChatsList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetFavoriteAnounces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetIDAnunt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="titlu" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetIDAnunturiCarePotrivescCuvantul" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cuvant" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetIDProd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="titlu" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetIDUserAnunt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetJudete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetLogedInUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetMedieUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetMedieVoturi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetMessagesFromUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user_eu" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_user_corespondent" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetMiniaturaProd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetNrVoturi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetOraseDinJudet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="judet" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetPozeAnunt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetPromotedAnounces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetPromotedAnouncesByCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="categorie" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetPromotedAnouncesBySubcategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="subcategorie" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetUserBasicInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetUserExtraInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spInsertAsociatedWord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_anunt" Type="int" Mode="In" />
+          <Parameter Name="cuvant" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spInsertSearchText" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="text" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spInsertSearchWord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cuvant" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spSendMesaj" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user_curent" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_user_destinatar" Type="nvarchar" Mode="In" />
+          <Parameter Name="mesaj" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="tranAddVoteAnounce" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="id_anunt" Type="numeric" Mode="In" />
+          <Parameter Name="nr_stele" Type="int" Mode="In" />
+        </Function>
+        <Function Name="tranLogIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="hash_parola" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="tranLogOut" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="tranSignIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_user" Type="nvarchar" Mode="In" />
+          <Parameter Name="nume" Type="nvarchar" Mode="In" />
+          <Parameter Name="telefon" Type="nchar" Mode="In" />
+          <Parameter Name="judet" Type="nvarchar" Mode="In" />
+          <Parameter Name="oras" Type="nvarchar" Mode="In" />
+          <Parameter Name="hash_parola" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="OLXModelStoreContainer">
+          <EntitySet Name="AUTO_BRANDS" EntityType="Self.AUTO_BRANDS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DB_ANOUNCES" EntityType="Self.DB_ANOUNCES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DB_PHOTOS" EntityType="Self.DB_PHOTOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DB_PROMOTE_PACKAGES" EntityType="Self.DB_PROMOTE_PACKAGES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DB_RO_CITIES" EntityType="Self.DB_RO_CITIES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DB_RO_COUNTIES" EntityType="Self.DB_RO_COUNTIES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DB_SEARCH_CATEGORIES" EntityType="Self.DB_SEARCH_CATEGORIES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DB_SEARCH_SUBCATEGORIES" EntityType="Self.DB_SEARCH_SUBCATEGORIES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DB_SEARCH_WORDS" EntityType="Self.DB_SEARCH_WORDS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DB_USERS" EntityType="Self.DB_USERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ACCOUNT_FAVORITE_ANOUNCES" EntityType="Self.ACCOUNT_FAVORITE_ANOUNCES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ACCOUNT_FAVORITE_ANOUNCES].[ID_USER] AS [ID_USER], 
+    [ACCOUNT_FAVORITE_ANOUNCES].[ID_ANUNT] AS [ID_ANUNT]
+    FROM [dbo].[ACCOUNT_FAVORITE_ANOUNCES] AS [ACCOUNT_FAVORITE_ANOUNCES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ACCOUNT_MESSAGES" EntityType="Self.ACCOUNT_MESSAGES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ACCOUNT_MESSAGES].[ID_USER_CURENT] AS [ID_USER_CURENT], 
+    [ACCOUNT_MESSAGES].[ID_USER_DESTINATAR] AS [ID_USER_DESTINATAR], 
+    [ACCOUNT_MESSAGES].[MESAJ] AS [MESAJ], 
+    [ACCOUNT_MESSAGES].[DATA] AS [DATA]
+    FROM [dbo].[ACCOUNT_MESSAGES] AS [ACCOUNT_MESSAGES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ANOUNCE_ACCSES_STATS" EntityType="Self.ANOUNCE_ACCSES_STATS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ANOUNCE_ACCSES_STATS].[ID_ANUNT] AS [ID_ANUNT], 
+    [ANOUNCE_ACCSES_STATS].[NR_VIZUALIZARI] AS [NR_VIZUALIZARI], 
+    [ANOUNCE_ACCSES_STATS].[NR_ACCES_TELEFON] AS [NR_ACCES_TELEFON]
+    FROM [dbo].[ANOUNCE_ACCSES_STATS] AS [ANOUNCE_ACCSES_STATS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ANOUNCE_AUTO_DETAILS" EntityType="Self.ANOUNCE_AUTO_DETAILS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ANOUNCE_AUTO_DETAILS].[ID_ANUNT] AS [ID_ANUNT], 
+    [ANOUNCE_AUTO_DETAILS].[ID_MARCA_MASINA] AS [ID_MARCA_MASINA], 
+    [ANOUNCE_AUTO_DETAILS].[MODEL] AS [MODEL], 
+    [ANOUNCE_AUTO_DETAILS].[CULOARE] AS [CULOARE], 
+    [ANOUNCE_AUTO_DETAILS].[CUTIE_VITEZE] AS [CUTIE_VITEZE], 
+    [ANOUNCE_AUTO_DETAILS].[AN] AS [AN], 
+    [ANOUNCE_AUTO_DETAILS].[RULAJ_KM] AS [RULAJ_KM], 
+    [ANOUNCE_AUTO_DETAILS].[CAROSERIE] AS [CAROSERIE], 
+    [ANOUNCE_AUTO_DETAILS].[COMBUSTIBIL] AS [COMBUSTIBIL], 
+    [ANOUNCE_AUTO_DETAILS].[CAPACITATE_MOTOR] AS [CAPACITATE_MOTOR]
+    FROM [dbo].[ANOUNCE_AUTO_DETAILS] AS [ANOUNCE_AUTO_DETAILS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ANOUNCE_FASHION_DETAILS" EntityType="Self.ANOUNCE_FASHION_DETAILS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ANOUNCE_FASHION_DETAILS].[ID_ANUNT] AS [ID_ANUNT], 
+    [ANOUNCE_FASHION_DETAILS].[TIP_ARTICOL_VESTIMENTAR] AS [TIP_ARTICOL_VESTIMENTAR], 
+    [ANOUNCE_FASHION_DETAILS].[MARIME] AS [MARIME], 
+    [ANOUNCE_FASHION_DETAILS].[CULOARE] AS [CULOARE], 
+    [ANOUNCE_FASHION_DETAILS].[MARCA] AS [MARCA]
+    FROM [dbo].[ANOUNCE_FASHION_DETAILS] AS [ANOUNCE_FASHION_DETAILS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ANOUNCE_HOUSE_DETAILS" EntityType="Self.ANOUNCE_HOUSE_DETAILS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ANOUNCE_HOUSE_DETAILS].[ID_ANUNT] AS [ID_ANUNT], 
+    [ANOUNCE_HOUSE_DETAILS].[NR_CAMERE] AS [NR_CAMERE], 
+    [ANOUNCE_HOUSE_DETAILS].[SUPRAFATA] AS [SUPRAFATA], 
+    [ANOUNCE_HOUSE_DETAILS].[COMPARTIMENTARE] AS [COMPARTIMENTARE], 
+    [ANOUNCE_HOUSE_DETAILS].[AN] AS [AN], 
+    [ANOUNCE_HOUSE_DETAILS].[TIP_VANZATOR] AS [TIP_VANZATOR], 
+    [ANOUNCE_HOUSE_DETAILS].[PARCARE] AS [PARCARE], 
+    [ANOUNCE_HOUSE_DETAILS].[SUPRAFATA_CURTE] AS [SUPRAFATA_CURTE]
+    FROM [dbo].[ANOUNCE_HOUSE_DETAILS] AS [ANOUNCE_HOUSE_DETAILS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ANOUNCE_VOTES" EntityType="Self.ANOUNCE_VOTES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ANOUNCE_VOTES].[ID_USER] AS [ID_USER], 
+    [ANOUNCE_VOTES].[ID_ANUNT] AS [ID_ANUNT], 
+    [ANOUNCE_VOTES].[VOT] AS [VOT]
+    FROM [dbo].[ANOUNCE_VOTES] AS [ANOUNCE_VOTES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ANOUNCE_WORK_DETAILS" EntityType="Self.ANOUNCE_WORK_DETAILS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ANOUNCE_WORK_DETAILS].[ID_ANUNT] AS [ID_ANUNT], 
+    [ANOUNCE_WORK_DETAILS].[TIP_MUNCA] AS [TIP_MUNCA], 
+    [ANOUNCE_WORK_DETAILS].[TIP_MOBILITATE] AS [TIP_MOBILITATE], 
+    [ANOUNCE_WORK_DETAILS].[SALARIU] AS [SALARIU]
+    FROM [dbo].[ANOUNCE_WORK_DETAILS] AS [ANOUNCE_WORK_DETAILS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ANOUNCES_COMMENTS" EntityType="Self.ANOUNCES_COMMENTS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ANOUNCES_COMMENTS].[ID_USER] AS [ID_USER], 
+    [ANOUNCES_COMMENTS].[ID_ANUNT] AS [ID_ANUNT], 
+    [ANOUNCES_COMMENTS].[COMENTARIU] AS [COMENTARIU], 
+    [ANOUNCES_COMMENTS].[DATA_ADAUGAT] AS [DATA_ADAUGAT]
+    FROM [dbo].[ANOUNCES_COMMENTS] AS [ANOUNCES_COMMENTS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DB_ASSOCIATED_WORDS" EntityType="Self.DB_ASSOCIATED_WORDS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DB_ASSOCIATED_WORDS].[ID_ANUNT] AS [ID_ANUNT], 
+    [DB_ASSOCIATED_WORDS].[ID_CUVANT] AS [ID_CUVANT]
+    FROM [dbo].[DB_ASSOCIATED_WORDS] AS [DB_ASSOCIATED_WORDS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DB_LOGINS" EntityType="Self.DB_LOGINS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DB_LOGINS].[ID_USER] AS [ID_USER], 
+    [DB_LOGINS].[DATA_LOGAT] AS [DATA_LOGAT], 
+    [DB_LOGINS].[DATA_DELOGAT] AS [DATA_DELOGAT]
+    FROM [dbo].[DB_LOGINS] AS [DB_LOGINS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DB_PASSWORDS" EntityType="Self.DB_PASSWORDS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DB_PASSWORDS].[ID_USER] AS [ID_USER], 
+    [DB_PASSWORDS].[PAROLA] AS [PAROLA]
+    FROM [dbo].[DB_PASSWORDS] AS [DB_PASSWORDS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DB_PROMOTED_ANOUNCES" EntityType="Self.DB_PROMOTED_ANOUNCES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DB_PROMOTED_ANOUNCES].[ID_ANUNT] AS [ID_ANUNT], 
+    [DB_PROMOTED_ANOUNCES].[ID_PACHET] AS [ID_PACHET], 
+    [DB_PROMOTED_ANOUNCES].[DATA_START] AS [DATA_START]
+    FROM [dbo].[DB_PROMOTED_ANOUNCES] AS [DB_PROMOTED_ANOUNCES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DB_SEARCH_TEXTS" EntityType="Self.DB_SEARCH_TEXTS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DB_SEARCH_TEXTS].[TEXT_CAUTAT] AS [TEXT_CAUTAT], 
+    [DB_SEARCH_TEXTS].[DATA_CAUTAT] AS [DATA_CAUTAT], 
+    [DB_SEARCH_TEXTS].[NR_CAUTARI_SIMILARE] AS [NR_CAUTARI_SIMILARE]
+    FROM [dbo].[DB_SEARCH_TEXTS] AS [DB_SEARCH_TEXTS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="USER_SEARCH_SESSIONS" EntityType="Self.USER_SEARCH_SESSIONS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [USER_SEARCH_SESSIONS].[ID_USER] AS [ID_USER], 
+    [USER_SEARCH_SESSIONS].[ID_ORAS] AS [ID_ORAS], 
+    [USER_SEARCH_SESSIONS].[ID_JUDET] AS [ID_JUDET], 
+    [USER_SEARCH_SESSIONS].[ID_CATEGORIE] AS [ID_CATEGORIE], 
+    [USER_SEARCH_SESSIONS].[PRET_MIN] AS [PRET_MIN], 
+    [USER_SEARCH_SESSIONS].[PRET_MAX] AS [PRET_MAX], 
+    [USER_SEARCH_SESSIONS].[MONEDA] AS [MONEDA], 
+    [USER_SEARCH_SESSIONS].[TIP_VANZATOR] AS [TIP_VANZATOR], 
+    [USER_SEARCH_SESSIONS].[TIP_ORDONARE] AS [TIP_ORDONARE], 
+    [USER_SEARCH_SESSIONS].[TEXT_CAUTAT] AS [TEXT_CAUTAT]
+    FROM [dbo].[USER_SEARCH_SESSIONS] AS [USER_SEARCH_SESSIONS]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ACCESARI_ANUNTURI" Association="Self.FK_ACCESARI_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_ACCSES_STATS" EntitySet="ANOUNCE_ACCSES_STATS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNT_AUTO_ANUNTURI" Association="Self.FK_ANUNT_AUTO_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_AUTO_DETAILS" EntitySet="ANOUNCE_AUTO_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNT_AUTO_MARCI_MASINI" Association="Self.FK_ANUNT_AUTO_MARCI_MASINI">
+            <End Role="AUTO_BRANDS" EntitySet="AUTO_BRANDS" />
+            <End Role="ANOUNCE_AUTO_DETAILS" EntitySet="ANOUNCE_AUTO_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNT_IMOBILIARE_ANUNTURI" Association="Self.FK_ANUNT_IMOBILIARE_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_HOUSE_DETAILS" EntitySet="ANOUNCE_HOUSE_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNT_MODA_ANUNTURI" Association="Self.FK_ANUNT_MODA_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_FASHION_DETAILS" EntitySet="ANOUNCE_FASHION_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNT_MUNCA_ANUNTURI" Association="Self.FK_ANUNT_MUNCA_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_WORK_DETAILS" EntitySet="ANOUNCE_WORK_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNTURI_CATEGORII" Association="Self.FK_ANUNTURI_CATEGORII">
+            <End Role="DB_SEARCH_CATEGORIES" EntitySet="DB_SEARCH_CATEGORIES" />
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNTURI_SUBCATEGORII" Association="Self.FK_ANUNTURI_SUBCATEGORII">
+            <End Role="DB_SEARCH_SUBCATEGORIES" EntitySet="DB_SEARCH_SUBCATEGORIES" />
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNTURI_USERS" Association="Self.FK_ANUNTURI_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMENTARII_ANUNTURI" Association="Self.FK_COMENTARII_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCES_COMMENTS" EntitySet="ANOUNCES_COMMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMENTARII_USERS" Association="Self.FK_COMENTARII_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="ANOUNCES_COMMENTS" EntitySet="ANOUNCES_COMMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUVINTE_CHEIE_ANUNTURI" Association="Self.FK_CUVINTE_CHEIE_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="DB_ASSOCIATED_WORDS" EntitySet="DB_ASSOCIATED_WORDS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DB_ASSOCIATED_WORDS_DB_SEARCH_WORDS" Association="Self.FK_DB_ASSOCIATED_WORDS_DB_SEARCH_WORDS">
+            <End Role="DB_SEARCH_WORDS" EntitySet="DB_SEARCH_WORDS" />
+            <End Role="DB_ASSOCIATED_WORDS" EntitySet="DB_ASSOCIATED_WORDS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DB_PHOTOS_DB_ANOUNCES" Association="Self.FK_DB_PHOTOS_DB_ANOUNCES">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="DB_PHOTOS" EntitySet="DB_PHOTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAVORITE_ANUNTURI" Association="Self.FK_FAVORITE_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ACCOUNT_FAVORITE_ANOUNCES" EntitySet="ACCOUNT_FAVORITE_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAVORITE_USERS" Association="Self.FK_FAVORITE_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="ACCOUNT_FAVORITE_ANOUNCES" EntitySet="ACCOUNT_FAVORITE_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOGARI_USERS" Association="Self.FK_LOGARI_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="DB_LOGINS" EntitySet="DB_LOGINS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MESAJEcorespondent_USERS" Association="Self.FK_MESAJEcorespondent_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="ACCOUNT_MESSAGES" EntitySet="ACCOUNT_MESSAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MESAJEinbox_USERS" Association="Self.FK_MESAJEinbox_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="ACCOUNT_MESSAGES" EntitySet="ACCOUNT_MESSAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORASE_JUDETE" Association="Self.FK_ORASE_JUDETE">
+            <End Role="DB_RO_COUNTIES" EntitySet="DB_RO_COUNTIES" />
+            <End Role="DB_RO_CITIES" EntitySet="DB_RO_CITIES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAROLE_USERS" Association="Self.FK_PAROLE_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="DB_PASSWORDS" EntitySet="DB_PASSWORDS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROMOVATE_ANUNTURI" Association="Self.FK_PROMOVATE_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="DB_PROMOTED_ANOUNCES" EntitySet="DB_PROMOTED_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROMOVATE_PACHETE" Association="Self.FK_PROMOVATE_PACHETE">
+            <End Role="DB_PROMOTE_PACKAGES" EntitySet="DB_PROMOTE_PACKAGES" />
+            <End Role="DB_PROMOTED_ANOUNCES" EntitySet="DB_PROMOTED_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBCATEGORII_CATEGORII" Association="Self.FK_SUBCATEGORII_CATEGORII">
+            <End Role="DB_SEARCH_CATEGORIES" EntitySet="DB_SEARCH_CATEGORIES" />
+            <End Role="DB_SEARCH_SUBCATEGORIES" EntitySet="DB_SEARCH_SUBCATEGORIES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBCATEGORII_SUBCATEGORII" Association="Self.FK_SUBCATEGORII_SUBCATEGORII">
+            <End Role="DB_SEARCH_SUBCATEGORIES" EntitySet="DB_SEARCH_SUBCATEGORIES" />
+            <End Role="DB_SEARCH_SUBCATEGORIES1" EntitySet="DB_SEARCH_SUBCATEGORIES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_SEARCH_SESSIONS_DB_RO_CITIES" Association="Self.FK_USER_SEARCH_SESSIONS_DB_RO_CITIES">
+            <End Role="DB_RO_CITIES" EntitySet="DB_RO_CITIES" />
+            <End Role="USER_SEARCH_SESSIONS" EntitySet="USER_SEARCH_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_SEARCH_SESSIONS_DB_RO_COUNTIES" Association="Self.FK_USER_SEARCH_SESSIONS_DB_RO_COUNTIES">
+            <End Role="DB_RO_COUNTIES" EntitySet="DB_RO_COUNTIES" />
+            <End Role="USER_SEARCH_SESSIONS" EntitySet="USER_SEARCH_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_SEARCH_SESSIONS_DB_SEARCH_CATEGORIES" Association="Self.FK_USER_SEARCH_SESSIONS_DB_SEARCH_CATEGORIES">
+            <End Role="DB_SEARCH_CATEGORIES" EntitySet="DB_SEARCH_CATEGORIES" />
+            <End Role="USER_SEARCH_SESSIONS" EntitySet="USER_SEARCH_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_SEARCH_SESSIONS_DB_USERS" Association="Self.FK_USER_SEARCH_SESSIONS_DB_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="USER_SEARCH_SESSIONS" EntitySet="USER_SEARCH_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERS_JUDETE" Association="Self.FK_USERS_JUDETE">
+            <End Role="DB_RO_COUNTIES" EntitySet="DB_RO_COUNTIES" />
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERS_ORASE" Association="Self.FK_USERS_ORASE">
+            <End Role="DB_RO_CITIES" EntitySet="DB_RO_CITIES" />
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VOTURI_ANUNTURI" Association="Self.FK_VOTURI_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_VOTES" EntitySet="ANOUNCE_VOTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VOTURI_USERS" Association="Self.FK_VOTURI_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="ANOUNCE_VOTES" EntitySet="ANOUNCE_VOTES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OLXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AUTO_BRANDS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NUME_MARCA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ANOUNCE_AUTO_DETAILS" Relationship="Self.FK_ANUNT_AUTO_MARCI_MASINI" FromRole="AUTO_BRANDS" ToRole="ANOUNCE_AUTO_DETAILS" />
+        </EntityType>
+        <EntityType Name="DB_ANOUNCES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TITLU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DATA_ADAUGAT" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="STARE_PRODUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_CATEGORIE" Type="Int32" Nullable="false" />
+          <Property Name="ID_SUBCATEGORIE" Type="Int32" Nullable="false" />
+          <Property Name="PRET" Type="Int32" Nullable="false" />
+          <Property Name="NEGOCIABIL" Type="Boolean" Nullable="false" />
+          <Property Name="DETALII" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LOC_INTALNIRE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ANOUNCE_ACCSES_STATS" Relationship="Self.FK_ACCESARI_ANUNTURI" FromRole="DB_ANOUNCES" ToRole="ANOUNCE_ACCSES_STATS" />
+          <NavigationProperty Name="ANOUNCE_AUTO_DETAILS" Relationship="Self.FK_ANUNT_AUTO_ANUNTURI" FromRole="DB_ANOUNCES" ToRole="ANOUNCE_AUTO_DETAILS" />
+          <NavigationProperty Name="ANOUNCE_HOUSE_DETAILS" Relationship="Self.FK_ANUNT_IMOBILIARE_ANUNTURI" FromRole="DB_ANOUNCES" ToRole="ANOUNCE_HOUSE_DETAILS" />
+          <NavigationProperty Name="ANOUNCE_FASHION_DETAILS" Relationship="Self.FK_ANUNT_MODA_ANUNTURI" FromRole="DB_ANOUNCES" ToRole="ANOUNCE_FASHION_DETAILS" />
+          <NavigationProperty Name="ANOUNCE_WORK_DETAILS" Relationship="Self.FK_ANUNT_MUNCA_ANUNTURI" FromRole="DB_ANOUNCES" ToRole="ANOUNCE_WORK_DETAILS" />
+          <NavigationProperty Name="DB_SEARCH_CATEGORIES" Relationship="Self.FK_ANUNTURI_CATEGORII" FromRole="DB_ANOUNCES" ToRole="DB_SEARCH_CATEGORIES" />
+          <NavigationProperty Name="DB_SEARCH_SUBCATEGORIES" Relationship="Self.FK_ANUNTURI_SUBCATEGORII" FromRole="DB_ANOUNCES" ToRole="DB_SEARCH_SUBCATEGORIES" />
+          <NavigationProperty Name="DB_USERS" Relationship="Self.FK_ANUNTURI_USERS" FromRole="DB_ANOUNCES" ToRole="DB_USERS" />
+          <NavigationProperty Name="ANOUNCES_COMMENTS" Relationship="Self.FK_COMENTARII_ANUNTURI" FromRole="DB_ANOUNCES" ToRole="ANOUNCES_COMMENTS" />
+          <NavigationProperty Name="DB_PHOTOS" Relationship="Self.FK_DB_PHOTOS_DB_ANOUNCES" FromRole="DB_ANOUNCES" ToRole="DB_PHOTOS" />
+          <NavigationProperty Name="DB_PROMOTED_ANOUNCES" Relationship="Self.FK_PROMOVATE_ANUNTURI" FromRole="DB_ANOUNCES" ToRole="DB_PROMOTED_ANOUNCES" />
+          <NavigationProperty Name="ANOUNCE_VOTES" Relationship="Self.FK_VOTURI_ANUNTURI" FromRole="DB_ANOUNCES" ToRole="ANOUNCE_VOTES" />
+          <NavigationProperty Name="DB_USERS1" Relationship="Self.ACCOUNT_FAVORITE_ANOUNCES" FromRole="DB_ANOUNCES" ToRole="DB_USERS" />
+          <NavigationProperty Name="DB_SEARCH_WORDS" Relationship="Self.DB_ASSOCIATED_WORDS" FromRole="DB_ANOUNCES" ToRole="DB_SEARCH_WORDS" />
+        </EntityType>
+        <EntityType Name="DB_PHOTOS">
+          <Key>
+            <PropertyRef Name="ID_POZA" />
+          </Key>
+          <Property Name="ID_POZA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_ANUNT" Type="Int32" Nullable="false" />
+          <Property Name="CALE_POZA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EVIDENTIATA" Type="Boolean" Nullable="false" />
+          <Property Name="POZA" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_DB_PHOTOS_DB_ANOUNCES" FromRole="DB_PHOTOS" ToRole="DB_ANOUNCES" />
+        </EntityType>
+        <EntityType Name="DB_PROMOTE_PACKAGES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NUME_PACHET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUMA" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="NR_ZILE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DB_PROMOTED_ANOUNCES" Relationship="Self.FK_PROMOVATE_PACHETE" FromRole="DB_PROMOTE_PACKAGES" ToRole="DB_PROMOTED_ANOUNCES" />
+        </EntityType>
+        <EntityType Name="DB_RO_CITIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NUME_ORAS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_JUDET" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DB_RO_COUNTIES" Relationship="Self.FK_ORASE_JUDETE" FromRole="DB_RO_CITIES" ToRole="DB_RO_COUNTIES" />
+          <NavigationProperty Name="USER_SEARCH_SESSIONS" Relationship="Self.FK_USER_SEARCH_SESSIONS_DB_RO_CITIES" FromRole="DB_RO_CITIES" ToRole="USER_SEARCH_SESSIONS" />
+          <NavigationProperty Name="DB_USERS" Relationship="Self.FK_USERS_ORASE" FromRole="DB_RO_CITIES" ToRole="DB_USERS" />
+        </EntityType>
+        <EntityType Name="DB_RO_COUNTIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NUME_JUDET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="DB_RO_CITIES" Relationship="Self.FK_ORASE_JUDETE" FromRole="DB_RO_COUNTIES" ToRole="DB_RO_CITIES" />
+          <NavigationProperty Name="USER_SEARCH_SESSIONS" Relationship="Self.FK_USER_SEARCH_SESSIONS_DB_RO_COUNTIES" FromRole="DB_RO_COUNTIES" ToRole="USER_SEARCH_SESSIONS" />
+          <NavigationProperty Name="DB_USERS" Relationship="Self.FK_USERS_JUDETE" FromRole="DB_RO_COUNTIES" ToRole="DB_USERS" />
+        </EntityType>
+        <EntityType Name="DB_SEARCH_CATEGORIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NUME_CATEGORIE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NR_ACCESARI" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_ANUNTURI_CATEGORII" FromRole="DB_SEARCH_CATEGORIES" ToRole="DB_ANOUNCES" />
+          <NavigationProperty Name="DB_SEARCH_SUBCATEGORIES" Relationship="Self.FK_SUBCATEGORII_CATEGORII" FromRole="DB_SEARCH_CATEGORIES" ToRole="DB_SEARCH_SUBCATEGORIES" />
+          <NavigationProperty Name="USER_SEARCH_SESSIONS" Relationship="Self.FK_USER_SEARCH_SESSIONS_DB_SEARCH_CATEGORIES" FromRole="DB_SEARCH_CATEGORIES" ToRole="USER_SEARCH_SESSIONS" />
+        </EntityType>
+        <EntityType Name="DB_SEARCH_SUBCATEGORIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NUME_SUBCATEGORIE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_CATEGORIE" Type="Int32" Nullable="false" />
+          <Property Name="ID_REFERINTA" Type="Int32" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_ANUNTURI_SUBCATEGORII" FromRole="DB_SEARCH_SUBCATEGORIES" ToRole="DB_ANOUNCES" />
+          <NavigationProperty Name="DB_SEARCH_CATEGORIES" Relationship="Self.FK_SUBCATEGORII_CATEGORII" FromRole="DB_SEARCH_SUBCATEGORIES" ToRole="DB_SEARCH_CATEGORIES" />
+          <NavigationProperty Name="DB_SEARCH_SUBCATEGORIES1" Relationship="Self.FK_SUBCATEGORII_SUBCATEGORII" FromRole="DB_SEARCH_SUBCATEGORIES" ToRole="DB_SEARCH_SUBCATEGORIES1" />
+          <NavigationProperty Name="DB_SEARCH_SUBCATEGORIES2" Relationship="Self.FK_SUBCATEGORII_SUBCATEGORII" FromRole="DB_SEARCH_SUBCATEGORIES1" ToRole="DB_SEARCH_SUBCATEGORIES" />
+        </EntityType>
+        <EntityType Name="DB_SEARCH_WORDS">
+          <Key>
+            <PropertyRef Name="ID_CUVANT" />
+          </Key>
+          <Property Name="ID_CUVANT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUVANT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.DB_ASSOCIATED_WORDS" FromRole="DB_SEARCH_WORDS" ToRole="DB_ANOUNCES" />
+        </EntityType>
+        <EntityType Name="DB_USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NUME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TELEFON" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ID_JUDET" Type="Int32" Nullable="false" />
+          <Property Name="ID_ORAS" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_ANUNTURI_USERS" FromRole="DB_USERS" ToRole="DB_ANOUNCES" />
+          <NavigationProperty Name="DB_RO_CITIES" Relationship="Self.FK_USERS_ORASE" FromRole="DB_USERS" ToRole="DB_RO_CITIES" />
+          <NavigationProperty Name="DB_RO_COUNTIES" Relationship="Self.FK_USERS_JUDETE" FromRole="DB_USERS" ToRole="DB_RO_COUNTIES" />
+          <NavigationProperty Name="ANOUNCES_COMMENTS" Relationship="Self.FK_COMENTARII_USERS" FromRole="DB_USERS" ToRole="ANOUNCES_COMMENTS" />
+          <NavigationProperty Name="DB_LOGINS" Relationship="Self.FK_LOGARI_USERS" FromRole="DB_USERS" ToRole="DB_LOGINS" />
+          <NavigationProperty Name="ACCOUNT_MESSAGES" Relationship="Self.FK_MESAJEcorespondent_USERS" FromRole="DB_USERS" ToRole="ACCOUNT_MESSAGES" />
+          <NavigationProperty Name="ACCOUNT_MESSAGES1" Relationship="Self.FK_MESAJEinbox_USERS" FromRole="DB_USERS" ToRole="ACCOUNT_MESSAGES" />
+          <NavigationProperty Name="DB_PASSWORDS" Relationship="Self.FK_PAROLE_USERS" FromRole="DB_USERS" ToRole="DB_PASSWORDS" />
+          <NavigationProperty Name="USER_SEARCH_SESSIONS" Relationship="Self.FK_USER_SEARCH_SESSIONS_DB_USERS" FromRole="DB_USERS" ToRole="USER_SEARCH_SESSIONS" />
+          <NavigationProperty Name="ANOUNCE_VOTES" Relationship="Self.FK_VOTURI_USERS" FromRole="DB_USERS" ToRole="ANOUNCE_VOTES" />
+          <NavigationProperty Name="DB_ANOUNCES1" Relationship="Self.ACCOUNT_FAVORITE_ANOUNCES" FromRole="DB_USERS" ToRole="DB_ANOUNCES" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ACCOUNT_MESSAGES">
+          <Key>
+            <PropertyRef Name="ID_USER_CURENT" />
+            <PropertyRef Name="ID_USER_DESTINATAR" />
+            <PropertyRef Name="MESAJ" />
+            <PropertyRef Name="DATA" />
+          </Key>
+          <Property Name="ID_USER_CURENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_USER_DESTINATAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MESAJ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DB_USERS" Relationship="Self.FK_MESAJEcorespondent_USERS" FromRole="ACCOUNT_MESSAGES" ToRole="DB_USERS" />
+          <NavigationProperty Name="DB_USERS1" Relationship="Self.FK_MESAJEinbox_USERS" FromRole="ACCOUNT_MESSAGES" ToRole="DB_USERS" />
+        </EntityType>
+        <EntityType Name="ANOUNCE_ACCSES_STATS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+            <PropertyRef Name="NR_VIZUALIZARI" />
+            <PropertyRef Name="NR_ACCES_TELEFON" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="Int32" Nullable="false" />
+          <Property Name="NR_VIZUALIZARI" Type="Int32" Nullable="false" />
+          <Property Name="NR_ACCES_TELEFON" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_ACCESARI_ANUNTURI" FromRole="ANOUNCE_ACCSES_STATS" ToRole="DB_ANOUNCES" />
+        </EntityType>
+        <EntityType Name="ANOUNCE_AUTO_DETAILS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="Int32" Nullable="false" />
+          <Property Name="ID_MARCA_MASINA" Type="Int32" />
+          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CULOARE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CUTIE_VITEZE" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="AN" Type="Int32" />
+          <Property Name="RULAJ_KM" Type="Int32" />
+          <Property Name="CAROSERIE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="COMBUSTIBIL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CAPACITATE_MOTOR" Type="Int32" />
+          <NavigationProperty Name="AUTO_BRANDS" Relationship="Self.FK_ANUNT_AUTO_MARCI_MASINI" FromRole="ANOUNCE_AUTO_DETAILS" ToRole="AUTO_BRANDS" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_ANUNT_AUTO_ANUNTURI" FromRole="ANOUNCE_AUTO_DETAILS" ToRole="DB_ANOUNCES" />
+        </EntityType>
+        <EntityType Name="ANOUNCE_FASHION_DETAILS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="Int32" Nullable="false" />
+          <Property Name="TIP_ARTICOL_VESTIMENTAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MARIME" Type="Int32" />
+          <Property Name="CULOARE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MARCA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_ANUNT_MODA_ANUNTURI" FromRole="ANOUNCE_FASHION_DETAILS" ToRole="DB_ANOUNCES" />
+        </EntityType>
+        <EntityType Name="ANOUNCE_HOUSE_DETAILS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="Int32" Nullable="false" />
+          <Property Name="NR_CAMERE" Type="Int32" />
+          <Property Name="SUPRAFATA" Type="Int32" />
+          <Property Name="COMPARTIMENTARE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AN" Type="Int32" />
+          <Property Name="TIP_VANZATOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PARCARE" Type="Boolean" />
+          <Property Name="SUPRAFATA_CURTE" Type="Int32" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_ANUNT_IMOBILIARE_ANUNTURI" FromRole="ANOUNCE_HOUSE_DETAILS" ToRole="DB_ANOUNCES" />
+        </EntityType>
+        <EntityType Name="ANOUNCE_VOTES">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_ANUNT" Type="Int32" Nullable="false" />
+          <Property Name="VOT" Type="Int32" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_VOTURI_ANUNTURI" FromRole="ANOUNCE_VOTES" ToRole="DB_ANOUNCES" />
+          <NavigationProperty Name="DB_USERS" Relationship="Self.FK_VOTURI_USERS" FromRole="ANOUNCE_VOTES" ToRole="DB_USERS" />
+        </EntityType>
+        <EntityType Name="ANOUNCE_WORK_DETAILS">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="Int32" Nullable="false" />
+          <Property Name="TIP_MUNCA" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="TIP_MOBILITATE" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="SALARIU" Type="Int32" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_ANUNT_MUNCA_ANUNTURI" FromRole="ANOUNCE_WORK_DETAILS" ToRole="DB_ANOUNCES" />
+        </EntityType>
+        <EntityType Name="ANOUNCES_COMMENTS">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="ID_ANUNT" />
+          </Key>
+          <Property Name="ID_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_ANUNT" Type="Int32" Nullable="false" />
+          <Property Name="COMENTARIU" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_ADAUGAT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_COMENTARII_ANUNTURI" FromRole="ANOUNCES_COMMENTS" ToRole="DB_ANOUNCES" />
+          <NavigationProperty Name="DB_USERS" Relationship="Self.FK_COMENTARII_USERS" FromRole="ANOUNCES_COMMENTS" ToRole="DB_USERS" />
+        </EntityType>
+        <EntityType Name="DB_LOGINS">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="DATA_LOGAT" />
+          </Key>
+          <Property Name="ID_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DATA_LOGAT" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATA_DELOGAT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="DB_USERS" Relationship="Self.FK_LOGARI_USERS" FromRole="DB_LOGINS" ToRole="DB_USERS" />
+        </EntityType>
+        <EntityType Name="DB_PASSWORDS">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="PAROLA" />
+          </Key>
+          <Property Name="ID_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PAROLA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="DB_USERS" Relationship="Self.FK_PAROLE_USERS" FromRole="DB_PASSWORDS" ToRole="DB_USERS" />
+        </EntityType>
+        <EntityType Name="DB_PROMOTED_ANOUNCES">
+          <Key>
+            <PropertyRef Name="ID_ANUNT" />
+            <PropertyRef Name="ID_PACHET" />
+            <PropertyRef Name="DATA_START" />
+          </Key>
+          <Property Name="ID_ANUNT" Type="Int32" Nullable="false" />
+          <Property Name="ID_PACHET" Type="Int32" Nullable="false" />
+          <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DB_ANOUNCES" Relationship="Self.FK_PROMOVATE_ANUNTURI" FromRole="DB_PROMOTED_ANOUNCES" ToRole="DB_ANOUNCES" />
+          <NavigationProperty Name="DB_PROMOTE_PACKAGES" Relationship="Self.FK_PROMOVATE_PACHETE" FromRole="DB_PROMOTED_ANOUNCES" ToRole="DB_PROMOTE_PACKAGES" />
+        </EntityType>
+        <EntityType Name="DB_SEARCH_TEXTS">
+          <Key>
+            <PropertyRef Name="TEXT_CAUTAT" />
+            <PropertyRef Name="DATA_CAUTAT" />
+            <PropertyRef Name="NR_CAUTARI_SIMILARE" />
+          </Key>
+          <Property Name="TEXT_CAUTAT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DATA_CAUTAT" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NR_CAUTARI_SIMILARE" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER_SEARCH_SESSIONS">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+          </Key>
+          <Property Name="ID_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_ORAS" Type="Int32" />
+          <Property Name="ID_JUDET" Type="Int32" />
+          <Property Name="ID_CATEGORIE" Type="Int32" />
+          <Property Name="PRET_MIN" Type="Int32" />
+          <Property Name="PRET_MAX" Type="Int32" />
+          <Property Name="MONEDA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TIP_VANZATOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TIP_ORDONARE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEXT_CAUTAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DB_RO_CITIES" Relationship="Self.FK_USER_SEARCH_SESSIONS_DB_RO_CITIES" FromRole="USER_SEARCH_SESSIONS" ToRole="DB_RO_CITIES" />
+          <NavigationProperty Name="DB_RO_COUNTIES" Relationship="Self.FK_USER_SEARCH_SESSIONS_DB_RO_COUNTIES" FromRole="USER_SEARCH_SESSIONS" ToRole="DB_RO_COUNTIES" />
+          <NavigationProperty Name="DB_SEARCH_CATEGORIES" Relationship="Self.FK_USER_SEARCH_SESSIONS_DB_SEARCH_CATEGORIES" FromRole="USER_SEARCH_SESSIONS" ToRole="DB_SEARCH_CATEGORIES" />
+          <NavigationProperty Name="DB_USERS" Relationship="Self.FK_USER_SEARCH_SESSIONS_DB_USERS" FromRole="USER_SEARCH_SESSIONS" ToRole="DB_USERS" />
+        </EntityType>
+        <Association Name="FK_ANUNT_AUTO_MARCI_MASINI">
+          <End Role="AUTO_BRANDS" Type="Self.AUTO_BRANDS" Multiplicity="0..1" />
+          <End Role="ANOUNCE_AUTO_DETAILS" Type="Self.ANOUNCE_AUTO_DETAILS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AUTO_BRANDS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_AUTO_DETAILS">
+              <PropertyRef Name="ID_MARCA_MASINA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACCESARI_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_ACCSES_STATS" Type="Self.ANOUNCE_ACCSES_STATS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_ACCSES_STATS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNT_AUTO_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_AUTO_DETAILS" Type="Self.ANOUNCE_AUTO_DETAILS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_AUTO_DETAILS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNT_IMOBILIARE_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_HOUSE_DETAILS" Type="Self.ANOUNCE_HOUSE_DETAILS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_HOUSE_DETAILS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNT_MODA_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_FASHION_DETAILS" Type="Self.ANOUNCE_FASHION_DETAILS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_FASHION_DETAILS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNT_MUNCA_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_WORK_DETAILS" Type="Self.ANOUNCE_WORK_DETAILS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_WORK_DETAILS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNTURI_CATEGORII">
+          <End Role="DB_SEARCH_CATEGORIES" Type="Self.DB_SEARCH_CATEGORIES" Multiplicity="1" />
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_CATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_ANOUNCES">
+              <PropertyRef Name="ID_CATEGORIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNTURI_SUBCATEGORII">
+          <End Role="DB_SEARCH_SUBCATEGORIES" Type="Self.DB_SEARCH_SUBCATEGORIES" Multiplicity="1" />
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_SUBCATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_ANOUNCES">
+              <PropertyRef Name="ID_SUBCATEGORIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANUNTURI_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_ANOUNCES">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMENTARII_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCES_COMMENTS" Type="Self.ANOUNCES_COMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCES_COMMENTS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DB_PHOTOS_DB_ANOUNCES">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="DB_PHOTOS" Type="Self.DB_PHOTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_PHOTOS">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROMOVATE_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="DB_PROMOTED_ANOUNCES" Type="Self.DB_PROMOTED_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_PROMOTED_ANOUNCES">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VOTURI_ANUNTURI">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="1" />
+          <End Role="ANOUNCE_VOTES" Type="Self.ANOUNCE_VOTES" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_ANOUNCES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_VOTES">
+              <PropertyRef Name="ID_ANUNT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROMOVATE_PACHETE">
+          <End Role="DB_PROMOTE_PACKAGES" Type="Self.DB_PROMOTE_PACKAGES" Multiplicity="1" />
+          <End Role="DB_PROMOTED_ANOUNCES" Type="Self.DB_PROMOTED_ANOUNCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_PROMOTE_PACKAGES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_PROMOTED_ANOUNCES">
+              <PropertyRef Name="ID_PACHET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORASE_JUDETE">
+          <End Role="DB_RO_COUNTIES" Type="Self.DB_RO_COUNTIES" Multiplicity="1" />
+          <End Role="DB_RO_CITIES" Type="Self.DB_RO_CITIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_RO_COUNTIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_RO_CITIES">
+              <PropertyRef Name="ID_JUDET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_SEARCH_SESSIONS_DB_RO_CITIES">
+          <End Role="DB_RO_CITIES" Type="Self.DB_RO_CITIES" Multiplicity="0..1" />
+          <End Role="USER_SEARCH_SESSIONS" Type="Self.USER_SEARCH_SESSIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_RO_CITIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USER_SEARCH_SESSIONS">
+              <PropertyRef Name="ID_ORAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERS_ORASE">
+          <End Role="DB_RO_CITIES" Type="Self.DB_RO_CITIES" Multiplicity="1" />
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_RO_CITIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_USERS">
+              <PropertyRef Name="ID_ORAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_SEARCH_SESSIONS_DB_RO_COUNTIES">
+          <End Role="DB_RO_COUNTIES" Type="Self.DB_RO_COUNTIES" Multiplicity="0..1" />
+          <End Role="USER_SEARCH_SESSIONS" Type="Self.USER_SEARCH_SESSIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_RO_COUNTIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USER_SEARCH_SESSIONS">
+              <PropertyRef Name="ID_JUDET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERS_JUDETE">
+          <End Role="DB_RO_COUNTIES" Type="Self.DB_RO_COUNTIES" Multiplicity="1" />
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_RO_COUNTIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_USERS">
+              <PropertyRef Name="ID_JUDET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBCATEGORII_CATEGORII">
+          <End Role="DB_SEARCH_CATEGORIES" Type="Self.DB_SEARCH_CATEGORIES" Multiplicity="1" />
+          <End Role="DB_SEARCH_SUBCATEGORIES" Type="Self.DB_SEARCH_SUBCATEGORIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_CATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_SEARCH_SUBCATEGORIES">
+              <PropertyRef Name="ID_CATEGORIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_SEARCH_SESSIONS_DB_SEARCH_CATEGORIES">
+          <End Role="DB_SEARCH_CATEGORIES" Type="Self.DB_SEARCH_CATEGORIES" Multiplicity="0..1" />
+          <End Role="USER_SEARCH_SESSIONS" Type="Self.USER_SEARCH_SESSIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_CATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USER_SEARCH_SESSIONS">
+              <PropertyRef Name="ID_CATEGORIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBCATEGORII_SUBCATEGORII">
+          <End Role="DB_SEARCH_SUBCATEGORIES" Type="Self.DB_SEARCH_SUBCATEGORIES" Multiplicity="0..1" />
+          <End Role="DB_SEARCH_SUBCATEGORIES1" Type="Self.DB_SEARCH_SUBCATEGORIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_SEARCH_SUBCATEGORIES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_SEARCH_SUBCATEGORIES1">
+              <PropertyRef Name="ID_REFERINTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMENTARII_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="ANOUNCES_COMMENTS" Type="Self.ANOUNCES_COMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCES_COMMENTS">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOGARI_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="DB_LOGINS" Type="Self.DB_LOGINS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_LOGINS">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MESAJEcorespondent_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="ACCOUNT_MESSAGES" Type="Self.ACCOUNT_MESSAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ACCOUNT_MESSAGES">
+              <PropertyRef Name="ID_USER_DESTINATAR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MESAJEinbox_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="ACCOUNT_MESSAGES" Type="Self.ACCOUNT_MESSAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ACCOUNT_MESSAGES">
+              <PropertyRef Name="ID_USER_CURENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAROLE_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="DB_PASSWORDS" Type="Self.DB_PASSWORDS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DB_PASSWORDS">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_SEARCH_SESSIONS_DB_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="1" />
+          <End Role="USER_SEARCH_SESSIONS" Type="Self.USER_SEARCH_SESSIONS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USER_SEARCH_SESSIONS">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VOTURI_USERS">
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="0..1" />
+          <End Role="ANOUNCE_VOTES" Type="Self.ANOUNCE_VOTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DB_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ANOUNCE_VOTES">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ACCOUNT_FAVORITE_ANOUNCES">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="*" />
+          <End Role="DB_USERS" Type="Self.DB_USERS" Multiplicity="*" />
+        </Association>
+        <Association Name="DB_ASSOCIATED_WORDS">
+          <End Role="DB_ANOUNCES" Type="Self.DB_ANOUNCES" Multiplicity="*" />
+          <End Role="DB_SEARCH_WORDS" Type="Self.DB_SEARCH_WORDS" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="OLXEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AUTO_BRANDS" EntityType="Self.AUTO_BRANDS" />
+          <EntitySet Name="DB_ANOUNCES" EntityType="Self.DB_ANOUNCES" />
+          <EntitySet Name="DB_PHOTOS" EntityType="Self.DB_PHOTOS" />
+          <EntitySet Name="DB_PROMOTE_PACKAGES" EntityType="Self.DB_PROMOTE_PACKAGES" />
+          <EntitySet Name="DB_RO_CITIES" EntityType="Self.DB_RO_CITIES" />
+          <EntitySet Name="DB_RO_COUNTIES" EntityType="Self.DB_RO_COUNTIES" />
+          <EntitySet Name="DB_SEARCH_CATEGORIES" EntityType="Self.DB_SEARCH_CATEGORIES" />
+          <EntitySet Name="DB_SEARCH_SUBCATEGORIES" EntityType="Self.DB_SEARCH_SUBCATEGORIES" />
+          <EntitySet Name="DB_SEARCH_WORDS" EntityType="Self.DB_SEARCH_WORDS" />
+          <EntitySet Name="DB_USERS" EntityType="Self.DB_USERS" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="ACCOUNT_MESSAGES" EntityType="Self.ACCOUNT_MESSAGES" />
+          <EntitySet Name="ANOUNCE_ACCSES_STATS" EntityType="Self.ANOUNCE_ACCSES_STATS" />
+          <EntitySet Name="ANOUNCE_AUTO_DETAILS" EntityType="Self.ANOUNCE_AUTO_DETAILS" />
+          <EntitySet Name="ANOUNCE_FASHION_DETAILS" EntityType="Self.ANOUNCE_FASHION_DETAILS" />
+          <EntitySet Name="ANOUNCE_HOUSE_DETAILS" EntityType="Self.ANOUNCE_HOUSE_DETAILS" />
+          <EntitySet Name="ANOUNCE_VOTES" EntityType="Self.ANOUNCE_VOTES" />
+          <EntitySet Name="ANOUNCE_WORK_DETAILS" EntityType="Self.ANOUNCE_WORK_DETAILS" />
+          <EntitySet Name="ANOUNCES_COMMENTS" EntityType="Self.ANOUNCES_COMMENTS" />
+          <EntitySet Name="DB_LOGINS" EntityType="Self.DB_LOGINS" />
+          <EntitySet Name="DB_PASSWORDS" EntityType="Self.DB_PASSWORDS" />
+          <EntitySet Name="DB_PROMOTED_ANOUNCES" EntityType="Self.DB_PROMOTED_ANOUNCES" />
+          <EntitySet Name="DB_SEARCH_TEXTS" EntityType="Self.DB_SEARCH_TEXTS" />
+          <EntitySet Name="USER_SEARCH_SESSIONS" EntityType="Self.USER_SEARCH_SESSIONS" />
+          <AssociationSet Name="FK_ANUNT_AUTO_MARCI_MASINI" Association="Self.FK_ANUNT_AUTO_MARCI_MASINI">
+            <End Role="AUTO_BRANDS" EntitySet="AUTO_BRANDS" />
+            <End Role="ANOUNCE_AUTO_DETAILS" EntitySet="ANOUNCE_AUTO_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACCESARI_ANUNTURI" Association="Self.FK_ACCESARI_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_ACCSES_STATS" EntitySet="ANOUNCE_ACCSES_STATS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNT_AUTO_ANUNTURI" Association="Self.FK_ANUNT_AUTO_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_AUTO_DETAILS" EntitySet="ANOUNCE_AUTO_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNT_IMOBILIARE_ANUNTURI" Association="Self.FK_ANUNT_IMOBILIARE_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_HOUSE_DETAILS" EntitySet="ANOUNCE_HOUSE_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNT_MODA_ANUNTURI" Association="Self.FK_ANUNT_MODA_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_FASHION_DETAILS" EntitySet="ANOUNCE_FASHION_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNT_MUNCA_ANUNTURI" Association="Self.FK_ANUNT_MUNCA_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_WORK_DETAILS" EntitySet="ANOUNCE_WORK_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNTURI_CATEGORII" Association="Self.FK_ANUNTURI_CATEGORII">
+            <End Role="DB_SEARCH_CATEGORIES" EntitySet="DB_SEARCH_CATEGORIES" />
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNTURI_SUBCATEGORII" Association="Self.FK_ANUNTURI_SUBCATEGORII">
+            <End Role="DB_SEARCH_SUBCATEGORIES" EntitySet="DB_SEARCH_SUBCATEGORIES" />
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANUNTURI_USERS" Association="Self.FK_ANUNTURI_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMENTARII_ANUNTURI" Association="Self.FK_COMENTARII_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCES_COMMENTS" EntitySet="ANOUNCES_COMMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DB_PHOTOS_DB_ANOUNCES" Association="Self.FK_DB_PHOTOS_DB_ANOUNCES">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="DB_PHOTOS" EntitySet="DB_PHOTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROMOVATE_ANUNTURI" Association="Self.FK_PROMOVATE_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="DB_PROMOTED_ANOUNCES" EntitySet="DB_PROMOTED_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VOTURI_ANUNTURI" Association="Self.FK_VOTURI_ANUNTURI">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="ANOUNCE_VOTES" EntitySet="ANOUNCE_VOTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROMOVATE_PACHETE" Association="Self.FK_PROMOVATE_PACHETE">
+            <End Role="DB_PROMOTE_PACKAGES" EntitySet="DB_PROMOTE_PACKAGES" />
+            <End Role="DB_PROMOTED_ANOUNCES" EntitySet="DB_PROMOTED_ANOUNCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORASE_JUDETE" Association="Self.FK_ORASE_JUDETE">
+            <End Role="DB_RO_COUNTIES" EntitySet="DB_RO_COUNTIES" />
+            <End Role="DB_RO_CITIES" EntitySet="DB_RO_CITIES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_SEARCH_SESSIONS_DB_RO_CITIES" Association="Self.FK_USER_SEARCH_SESSIONS_DB_RO_CITIES">
+            <End Role="DB_RO_CITIES" EntitySet="DB_RO_CITIES" />
+            <End Role="USER_SEARCH_SESSIONS" EntitySet="USER_SEARCH_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERS_ORASE" Association="Self.FK_USERS_ORASE">
+            <End Role="DB_RO_CITIES" EntitySet="DB_RO_CITIES" />
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_SEARCH_SESSIONS_DB_RO_COUNTIES" Association="Self.FK_USER_SEARCH_SESSIONS_DB_RO_COUNTIES">
+            <End Role="DB_RO_COUNTIES" EntitySet="DB_RO_COUNTIES" />
+            <End Role="USER_SEARCH_SESSIONS" EntitySet="USER_SEARCH_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERS_JUDETE" Association="Self.FK_USERS_JUDETE">
+            <End Role="DB_RO_COUNTIES" EntitySet="DB_RO_COUNTIES" />
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBCATEGORII_CATEGORII" Association="Self.FK_SUBCATEGORII_CATEGORII">
+            <End Role="DB_SEARCH_CATEGORIES" EntitySet="DB_SEARCH_CATEGORIES" />
+            <End Role="DB_SEARCH_SUBCATEGORIES" EntitySet="DB_SEARCH_SUBCATEGORIES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_SEARCH_SESSIONS_DB_SEARCH_CATEGORIES" Association="Self.FK_USER_SEARCH_SESSIONS_DB_SEARCH_CATEGORIES">
+            <End Role="DB_SEARCH_CATEGORIES" EntitySet="DB_SEARCH_CATEGORIES" />
+            <End Role="USER_SEARCH_SESSIONS" EntitySet="USER_SEARCH_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBCATEGORII_SUBCATEGORII" Association="Self.FK_SUBCATEGORII_SUBCATEGORII">
+            <End Role="DB_SEARCH_SUBCATEGORIES" EntitySet="DB_SEARCH_SUBCATEGORIES" />
+            <End Role="DB_SEARCH_SUBCATEGORIES1" EntitySet="DB_SEARCH_SUBCATEGORIES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMENTARII_USERS" Association="Self.FK_COMENTARII_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="ANOUNCES_COMMENTS" EntitySet="ANOUNCES_COMMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOGARI_USERS" Association="Self.FK_LOGARI_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="DB_LOGINS" EntitySet="DB_LOGINS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MESAJEcorespondent_USERS" Association="Self.FK_MESAJEcorespondent_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="ACCOUNT_MESSAGES" EntitySet="ACCOUNT_MESSAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MESAJEinbox_USERS" Association="Self.FK_MESAJEinbox_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="ACCOUNT_MESSAGES" EntitySet="ACCOUNT_MESSAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAROLE_USERS" Association="Self.FK_PAROLE_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="DB_PASSWORDS" EntitySet="DB_PASSWORDS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_SEARCH_SESSIONS_DB_USERS" Association="Self.FK_USER_SEARCH_SESSIONS_DB_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="USER_SEARCH_SESSIONS" EntitySet="USER_SEARCH_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VOTURI_USERS" Association="Self.FK_VOTURI_USERS">
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+            <End Role="ANOUNCE_VOTES" EntitySet="ANOUNCE_VOTES" />
+          </AssociationSet>
+          <AssociationSet Name="ACCOUNT_FAVORITE_ANOUNCES" Association="Self.ACCOUNT_FAVORITE_ANOUNCES">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="DB_USERS" EntitySet="DB_USERS" />
+          </AssociationSet>
+          <AssociationSet Name="DB_ASSOCIATED_WORDS" Association="Self.DB_ASSOCIATED_WORDS">
+            <End Role="DB_ANOUNCES" EntitySet="DB_ANOUNCES" />
+            <End Role="DB_SEARCH_WORDS" EntitySet="DB_SEARCH_WORDS" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="spAccesAnounce">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spAccesCategory">
+            <Parameter Name="id_categorie" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spAddComentariu">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="comentariu" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddPhoto">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+            <Parameter Name="cale_foto" Mode="In" Type="String" />
+            <Parameter Name="evidentiata" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spADDprod">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="titlu" Mode="In" Type="String" />
+            <Parameter Name="stare" Mode="In" Type="String" />
+            <Parameter Name="categorie" Mode="In" Type="String" />
+            <Parameter Name="subcategorie" Mode="In" Type="String" />
+            <Parameter Name="pret" Mode="In" Type="Int32" />
+            <Parameter Name="negociabil" Mode="In" Type="Boolean" />
+            <Parameter Name="detalii" Mode="In" Type="String" />
+            <Parameter Name="loc_intalnire" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spADDprod_details_auto">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+            <Parameter Name="marca" Mode="In" Type="String" />
+            <Parameter Name="model" Mode="In" Type="String" />
+            <Parameter Name="culoare" Mode="In" Type="String" />
+            <Parameter Name="cutie_viteze" Mode="In" Type="String" />
+            <Parameter Name="an" Mode="In" Type="Int32" />
+            <Parameter Name="rulaj" Mode="In" Type="Int32" />
+            <Parameter Name="caroserie" Mode="In" Type="String" />
+            <Parameter Name="combustibil" Mode="In" Type="String" />
+            <Parameter Name="capacitate_motor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spADDprod_details_fashion">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+            <Parameter Name="tip_articol_vestimentar" Mode="In" Type="String" />
+            <Parameter Name="marime" Mode="In" Type="Int32" />
+            <Parameter Name="culoare" Mode="In" Type="String" />
+            <Parameter Name="marca" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spADDprod_details_house">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+            <Parameter Name="nr_camere" Mode="In" Type="Int32" />
+            <Parameter Name="suprafata" Mode="In" Type="Int32" />
+            <Parameter Name="compartimentare" Mode="In" Type="String" />
+            <Parameter Name="an" Mode="In" Type="Int32" />
+            <Parameter Name="tip_vanzator" Mode="In" Type="String" />
+            <Parameter Name="parcare" Mode="In" Type="Boolean" />
+            <Parameter Name="suprafata_curte" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spADDprod_details_work">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+            <Parameter Name="tip_munca" Mode="In" Type="String" />
+            <Parameter Name="tip_mobilitate" Mode="In" Type="String" />
+            <Parameter Name="salariu" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spAddPromotedAnounce">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+            <Parameter Name="nume_pachet" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddSearchFilterCategorie">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="categorie" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddSearchFilterCity">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="oras" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddSearchFilterCounty">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="judet" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddSearchFilterMaxPrice">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="pret_maxim" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spAddSearchFilterMinPrice">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="pret_minim" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spAddSearchFilterMoneda">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="moneda" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddSearchFilterOrdonareRezultate">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="ordonare" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddSearchFilterTipVanzator">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="vanzator" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddSearchSession">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddSearchText">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="text" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddToFavorite">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetAnounceComments">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetAnounceDetails" ReturnType="Collection(OLXModel.spGetAnounceDetails_Result)">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetAsociatedWords" ReturnType="Collection(String)">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetAutoBrands" ReturnType="Collection(String)" />
+          <FunctionImport Name="spGetCategorieAnunt" ReturnType="Collection(String)">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetChatsList" ReturnType="Collection(String)">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetFavoriteAnounces" ReturnType="Collection(Int32)">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetIDAnunt" ReturnType="Collection(Int32)">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="titlu" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetIDAnunturiCarePotrivescCuvantul" ReturnType="Collection(Int32)">
+            <Parameter Name="cuvant" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetIDProd">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="titlu" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetIDUserAnunt" ReturnType="Collection(String)">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetJudete" ReturnType="Collection(String)" />
+          <FunctionImport Name="spGetLogedInUsers" ReturnType="Collection(String)" />
+          <FunctionImport Name="spGetMedieUser" ReturnType="Collection(Int32)">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetMedieVoturi" ReturnType="Collection(Int32)">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetMessagesFromUser" ReturnType="Collection(OLXModel.spGetMessagesFromUser_Result)">
+            <Parameter Name="id_user_eu" Mode="In" Type="String" />
+            <Parameter Name="id_user_corespondent" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetMiniaturaProd" ReturnType="Collection(OLXModel.spGetMiniaturaProd_Result)">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetNrVoturi" ReturnType="Collection(Int32)">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetOraseDinJudet" ReturnType="Collection(String)">
+            <Parameter Name="judet" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetPozeAnunt" ReturnType="Collection(String)">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetPromotedAnounces" />
+          <FunctionImport Name="spGetPromotedAnouncesByCategory">
+            <Parameter Name="categorie" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetPromotedAnouncesBySubcategory">
+            <Parameter Name="subcategorie" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetUserBasicInfo" ReturnType="Collection(OLXModel.spGetUserBasicInfo_Result)">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetUserExtraInfo">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertAsociatedWord">
+            <Parameter Name="id_anunt" Mode="In" Type="Int32" />
+            <Parameter Name="cuvant" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertSearchText">
+            <Parameter Name="text" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertSearchWord">
+            <Parameter Name="cuvant" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spSendMesaj">
+            <Parameter Name="id_user_curent" Mode="In" Type="String" />
+            <Parameter Name="id_user_destinatar" Mode="In" Type="String" />
+            <Parameter Name="mesaj" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="tranAddVoteAnounce">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="id_anunt" Mode="In" Type="Decimal" />
+            <Parameter Name="nr_stele" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="tranLogIn">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="hash_parola" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="tranLogOut">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="tranSignIn">
+            <Parameter Name="id_user" Mode="In" Type="String" />
+            <Parameter Name="nume" Mode="In" Type="String" />
+            <Parameter Name="telefon" Mode="In" Type="String" />
+            <Parameter Name="judet" Mode="In" Type="String" />
+            <Parameter Name="oras" Mode="In" Type="String" />
+            <Parameter Name="hash_parola" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spGetAnounceDetails_Result">
+          <Property Type="String" Name="NUME_MARCA" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MODEL" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CULOARE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CUTIE_VITEZE" Nullable="true" MaxLength="9" />
+          <Property Type="Int32" Name="AN" Nullable="true" />
+          <Property Type="Int32" Name="RULAJ_KM" Nullable="true" />
+          <Property Type="String" Name="CAROSERIE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="COMBUSTIBIL" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CAPACITATE_MOTOR" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spGetMessagesFromUser_Result">
+          <Property Type="String" Name="ID_USER_CURENT" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="DATA" Nullable="false" Precision="23" />
+          <Property Type="String" Name="MESAJ" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="spGetMiniaturaProd_Result">
+          <Property Type="String" Name="TITLU" Nullable="false" />
+          <Property Type="String" Name="NUME_CATEGORIE" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NUME_SUBCATEGORIE" Nullable="false" />
+          <Property Type="String" Name="NUME_ORAS" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NUME_JUDET" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="PRET" Nullable="false" />
+          <Property Type="Boolean" Name="NEGOCIABIL" Nullable="false" />
+          <Property Type="String" Name="CALE_POZA" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="spGetUserBasicInfo_Result">
+          <Property Type="String" Name="NUME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NUME_ORAS" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NUME_JUDET" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OLXModelStoreContainer" CdmEntityContainer="OLXEntities">
+          <EntitySetMapping Name="AUTO_BRANDS">
+            <EntityTypeMapping TypeName="OLXModel.AUTO_BRANDS">
+              <MappingFragment StoreEntitySet="AUTO_BRANDS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NUME_MARCA" ColumnName="NUME_MARCA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_ANOUNCES">
+            <EntityTypeMapping TypeName="OLXModel.DB_ANOUNCES">
+              <MappingFragment StoreEntitySet="DB_ANOUNCES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="TITLU" ColumnName="TITLU" />
+                <ScalarProperty Name="DATA_ADAUGAT" ColumnName="DATA_ADAUGAT" />
+                <ScalarProperty Name="STARE_PRODUS" ColumnName="STARE_PRODUS" />
+                <ScalarProperty Name="ID_CATEGORIE" ColumnName="ID_CATEGORIE" />
+                <ScalarProperty Name="ID_SUBCATEGORIE" ColumnName="ID_SUBCATEGORIE" />
+                <ScalarProperty Name="PRET" ColumnName="PRET" />
+                <ScalarProperty Name="NEGOCIABIL" ColumnName="NEGOCIABIL" />
+                <ScalarProperty Name="DETALII" ColumnName="DETALII" />
+                <ScalarProperty Name="LOC_INTALNIRE" ColumnName="LOC_INTALNIRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_PHOTOS">
+            <EntityTypeMapping TypeName="OLXModel.DB_PHOTOS">
+              <MappingFragment StoreEntitySet="DB_PHOTOS">
+                <ScalarProperty Name="ID_POZA" ColumnName="ID_POZA" />
+                <ScalarProperty Name="ID_ANUNT" ColumnName="ID_ANUNT" />
+                <ScalarProperty Name="CALE_POZA" ColumnName="CALE_POZA" />
+                <ScalarProperty Name="EVIDENTIATA" ColumnName="EVIDENTIATA" />
+                <ScalarProperty Name="POZA" ColumnName="POZA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_PROMOTE_PACKAGES">
+            <EntityTypeMapping TypeName="OLXModel.DB_PROMOTE_PACKAGES">
+              <MappingFragment StoreEntitySet="DB_PROMOTE_PACKAGES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NUME_PACHET" ColumnName="NUME_PACHET" />
+                <ScalarProperty Name="SUMA" ColumnName="SUMA" />
+                <ScalarProperty Name="NR_ZILE" ColumnName="NR_ZILE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_RO_CITIES">
+            <EntityTypeMapping TypeName="OLXModel.DB_RO_CITIES">
+              <MappingFragment StoreEntitySet="DB_RO_CITIES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NUME_ORAS" ColumnName="NUME_ORAS" />
+                <ScalarProperty Name="ID_JUDET" ColumnName="ID_JUDET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_RO_COUNTIES">
+            <EntityTypeMapping TypeName="OLXModel.DB_RO_COUNTIES">
+              <MappingFragment StoreEntitySet="DB_RO_COUNTIES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NUME_JUDET" ColumnName="NUME_JUDET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_SEARCH_CATEGORIES">
+            <EntityTypeMapping TypeName="OLXModel.DB_SEARCH_CATEGORIES">
+              <MappingFragment StoreEntitySet="DB_SEARCH_CATEGORIES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NUME_CATEGORIE" ColumnName="NUME_CATEGORIE" />
+                <ScalarProperty Name="NR_ACCESARI" ColumnName="NR_ACCESARI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_SEARCH_SUBCATEGORIES">
+            <EntityTypeMapping TypeName="OLXModel.DB_SEARCH_SUBCATEGORIES">
+              <MappingFragment StoreEntitySet="DB_SEARCH_SUBCATEGORIES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NUME_SUBCATEGORIE" ColumnName="NUME_SUBCATEGORIE" />
+                <ScalarProperty Name="ID_CATEGORIE" ColumnName="ID_CATEGORIE" />
+                <ScalarProperty Name="ID_REFERINTA" ColumnName="ID_REFERINTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_SEARCH_WORDS">
+            <EntityTypeMapping TypeName="OLXModel.DB_SEARCH_WORDS">
+              <MappingFragment StoreEntitySet="DB_SEARCH_WORDS">
+                <ScalarProperty Name="ID_CUVANT" ColumnName="ID_CUVANT" />
+                <ScalarProperty Name="CUVANT" ColumnName="CUVANT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_USERS">
+            <EntityTypeMapping TypeName="OLXModel.DB_USERS">
+              <MappingFragment StoreEntitySet="DB_USERS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NUME" ColumnName="NUME" />
+                <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                <ScalarProperty Name="ID_JUDET" ColumnName="ID_JUDET" />
+                <ScalarProperty Name="ID_ORAS" ColumnName="ID_ORAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="OLXModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACCOUNT_MESSAGES">
+            <EntityTypeMapping TypeName="OLXModel.ACCOUNT_MESSAGES">
+              <MappingFragment StoreEntitySet="ACCOUNT_MESSAGES">
+                <ScalarProperty Name="ID_USER_CURENT" ColumnName="ID_USER_CURENT" />
+                <ScalarProperty Name="ID_USER_DESTINATAR" ColumnName="ID_USER_DESTINATAR" />
+                <ScalarProperty Name="MESAJ" ColumnName="MESAJ" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANOUNCE_ACCSES_STATS">
+            <EntityTypeMapping TypeName="OLXModel.ANOUNCE_ACCSES_STATS">
+              <MappingFragment StoreEntitySet="ANOUNCE_ACCSES_STATS">
+                <ScalarProperty Name="ID_ANUNT" ColumnName="ID_ANUNT" />
+                <ScalarProperty Name="NR_VIZUALIZARI" ColumnName="NR_VIZUALIZARI" />
+                <ScalarProperty Name="NR_ACCES_TELEFON" ColumnName="NR_ACCES_TELEFON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANOUNCE_AUTO_DETAILS">
+            <EntityTypeMapping TypeName="OLXModel.ANOUNCE_AUTO_DETAILS">
+              <MappingFragment StoreEntitySet="ANOUNCE_AUTO_DETAILS">
+                <ScalarProperty Name="ID_ANUNT" ColumnName="ID_ANUNT" />
+                <ScalarProperty Name="ID_MARCA_MASINA" ColumnName="ID_MARCA_MASINA" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="CULOARE" ColumnName="CULOARE" />
+                <ScalarProperty Name="CUTIE_VITEZE" ColumnName="CUTIE_VITEZE" />
+                <ScalarProperty Name="AN" ColumnName="AN" />
+                <ScalarProperty Name="RULAJ_KM" ColumnName="RULAJ_KM" />
+                <ScalarProperty Name="CAROSERIE" ColumnName="CAROSERIE" />
+                <ScalarProperty Name="COMBUSTIBIL" ColumnName="COMBUSTIBIL" />
+                <ScalarProperty Name="CAPACITATE_MOTOR" ColumnName="CAPACITATE_MOTOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANOUNCE_FASHION_DETAILS">
+            <EntityTypeMapping TypeName="OLXModel.ANOUNCE_FASHION_DETAILS">
+              <MappingFragment StoreEntitySet="ANOUNCE_FASHION_DETAILS">
+                <ScalarProperty Name="ID_ANUNT" ColumnName="ID_ANUNT" />
+                <ScalarProperty Name="TIP_ARTICOL_VESTIMENTAR" ColumnName="TIP_ARTICOL_VESTIMENTAR" />
+                <ScalarProperty Name="MARIME" ColumnName="MARIME" />
+                <ScalarProperty Name="CULOARE" ColumnName="CULOARE" />
+                <ScalarProperty Name="MARCA" ColumnName="MARCA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANOUNCE_HOUSE_DETAILS">
+            <EntityTypeMapping TypeName="OLXModel.ANOUNCE_HOUSE_DETAILS">
+              <MappingFragment StoreEntitySet="ANOUNCE_HOUSE_DETAILS">
+                <ScalarProperty Name="ID_ANUNT" ColumnName="ID_ANUNT" />
+                <ScalarProperty Name="NR_CAMERE" ColumnName="NR_CAMERE" />
+                <ScalarProperty Name="SUPRAFATA" ColumnName="SUPRAFATA" />
+                <ScalarProperty Name="COMPARTIMENTARE" ColumnName="COMPARTIMENTARE" />
+                <ScalarProperty Name="AN" ColumnName="AN" />
+                <ScalarProperty Name="TIP_VANZATOR" ColumnName="TIP_VANZATOR" />
+                <ScalarProperty Name="PARCARE" ColumnName="PARCARE" />
+                <ScalarProperty Name="SUPRAFATA_CURTE" ColumnName="SUPRAFATA_CURTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANOUNCE_VOTES">
+            <EntityTypeMapping TypeName="OLXModel.ANOUNCE_VOTES">
+              <MappingFragment StoreEntitySet="ANOUNCE_VOTES">
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="ID_ANUNT" ColumnName="ID_ANUNT" />
+                <ScalarProperty Name="VOT" ColumnName="VOT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANOUNCE_WORK_DETAILS">
+            <EntityTypeMapping TypeName="OLXModel.ANOUNCE_WORK_DETAILS">
+              <MappingFragment StoreEntitySet="ANOUNCE_WORK_DETAILS">
+                <ScalarProperty Name="ID_ANUNT" ColumnName="ID_ANUNT" />
+                <ScalarProperty Name="TIP_MUNCA" ColumnName="TIP_MUNCA" />
+                <ScalarProperty Name="TIP_MOBILITATE" ColumnName="TIP_MOBILITATE" />
+                <ScalarProperty Name="SALARIU" ColumnName="SALARIU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANOUNCES_COMMENTS">
+            <EntityTypeMapping TypeName="OLXModel.ANOUNCES_COMMENTS">
+              <MappingFragment StoreEntitySet="ANOUNCES_COMMENTS">
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="ID_ANUNT" ColumnName="ID_ANUNT" />
+                <ScalarProperty Name="COMENTARIU" ColumnName="COMENTARIU" />
+                <ScalarProperty Name="DATA_ADAUGAT" ColumnName="DATA_ADAUGAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_LOGINS">
+            <EntityTypeMapping TypeName="OLXModel.DB_LOGINS">
+              <MappingFragment StoreEntitySet="DB_LOGINS">
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="DATA_LOGAT" ColumnName="DATA_LOGAT" />
+                <ScalarProperty Name="DATA_DELOGAT" ColumnName="DATA_DELOGAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_PASSWORDS">
+            <EntityTypeMapping TypeName="OLXModel.DB_PASSWORDS">
+              <MappingFragment StoreEntitySet="DB_PASSWORDS">
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="PAROLA" ColumnName="PAROLA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_PROMOTED_ANOUNCES">
+            <EntityTypeMapping TypeName="OLXModel.DB_PROMOTED_ANOUNCES">
+              <MappingFragment StoreEntitySet="DB_PROMOTED_ANOUNCES">
+                <ScalarProperty Name="ID_ANUNT" ColumnName="ID_ANUNT" />
+                <ScalarProperty Name="ID_PACHET" ColumnName="ID_PACHET" />
+                <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DB_SEARCH_TEXTS">
+            <EntityTypeMapping TypeName="OLXModel.DB_SEARCH_TEXTS">
+              <MappingFragment StoreEntitySet="DB_SEARCH_TEXTS">
+                <ScalarProperty Name="TEXT_CAUTAT" ColumnName="TEXT_CAUTAT" />
+                <ScalarProperty Name="DATA_CAUTAT" ColumnName="DATA_CAUTAT" />
+                <ScalarProperty Name="NR_CAUTARI_SIMILARE" ColumnName="NR_CAUTARI_SIMILARE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_SEARCH_SESSIONS">
+            <EntityTypeMapping TypeName="OLXModel.USER_SEARCH_SESSIONS">
+              <MappingFragment StoreEntitySet="USER_SEARCH_SESSIONS">
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="ID_ORAS" ColumnName="ID_ORAS" />
+                <ScalarProperty Name="ID_JUDET" ColumnName="ID_JUDET" />
+                <ScalarProperty Name="ID_CATEGORIE" ColumnName="ID_CATEGORIE" />
+                <ScalarProperty Name="PRET_MIN" ColumnName="PRET_MIN" />
+                <ScalarProperty Name="PRET_MAX" ColumnName="PRET_MAX" />
+                <ScalarProperty Name="MONEDA" ColumnName="MONEDA" />
+                <ScalarProperty Name="TIP_VANZATOR" ColumnName="TIP_VANZATOR" />
+                <ScalarProperty Name="TIP_ORDONARE" ColumnName="TIP_ORDONARE" />
+                <ScalarProperty Name="TEXT_CAUTAT" ColumnName="TEXT_CAUTAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ACCOUNT_FAVORITE_ANOUNCES" TypeName="OLXModel.ACCOUNT_FAVORITE_ANOUNCES" StoreEntitySet="ACCOUNT_FAVORITE_ANOUNCES">
+            <EndProperty Name="DB_ANOUNCES">
+              <ScalarProperty Name="ID" ColumnName="ID_ANUNT" />
+            </EndProperty>
+            <EndProperty Name="DB_USERS">
+              <ScalarProperty Name="ID" ColumnName="ID_USER" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="DB_ASSOCIATED_WORDS" TypeName="OLXModel.DB_ASSOCIATED_WORDS" StoreEntitySet="DB_ASSOCIATED_WORDS">
+            <EndProperty Name="DB_ANOUNCES">
+              <ScalarProperty Name="ID" ColumnName="ID_ANUNT" />
+            </EndProperty>
+            <EndProperty Name="DB_SEARCH_WORDS">
+              <ScalarProperty Name="ID_CUVANT" ColumnName="ID_CUVANT" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="OLXModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="OLXModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="OLXModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="OLXModel.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="OLXModel.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="OLXModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="OLXModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="spAccesAnounce" FunctionName="OLXModel.Store.spAccesAnounce" />
+          <FunctionImportMapping FunctionImportName="spAccesCategory" FunctionName="OLXModel.Store.spAccesCategory" />
+          <FunctionImportMapping FunctionImportName="spAddComentariu" FunctionName="OLXModel.Store.spAddComentariu" />
+          <FunctionImportMapping FunctionImportName="spAddPhoto" FunctionName="OLXModel.Store.spAddPhoto" />
+          <FunctionImportMapping FunctionImportName="spADDprod" FunctionName="OLXModel.Store.spADDprod" />
+          <FunctionImportMapping FunctionImportName="spADDprod_details_auto" FunctionName="OLXModel.Store.spADDprod_details_auto" />
+          <FunctionImportMapping FunctionImportName="spADDprod_details_fashion" FunctionName="OLXModel.Store.spADDprod_details_fashion" />
+          <FunctionImportMapping FunctionImportName="spADDprod_details_house" FunctionName="OLXModel.Store.spADDprod_details_house" />
+          <FunctionImportMapping FunctionImportName="spADDprod_details_work" FunctionName="OLXModel.Store.spADDprod_details_work" />
+          <FunctionImportMapping FunctionImportName="spAddPromotedAnounce" FunctionName="OLXModel.Store.spAddPromotedAnounce" />
+          <FunctionImportMapping FunctionImportName="spAddSearchFilterCategorie" FunctionName="OLXModel.Store.spAddSearchFilterCategorie" />
+          <FunctionImportMapping FunctionImportName="spAddSearchFilterCity" FunctionName="OLXModel.Store.spAddSearchFilterCity" />
+          <FunctionImportMapping FunctionImportName="spAddSearchFilterCounty" FunctionName="OLXModel.Store.spAddSearchFilterCounty" />
+          <FunctionImportMapping FunctionImportName="spAddSearchFilterMaxPrice" FunctionName="OLXModel.Store.spAddSearchFilterMaxPrice" />
+          <FunctionImportMapping FunctionImportName="spAddSearchFilterMinPrice" FunctionName="OLXModel.Store.spAddSearchFilterMinPrice" />
+          <FunctionImportMapping FunctionImportName="spAddSearchFilterMoneda" FunctionName="OLXModel.Store.spAddSearchFilterMoneda" />
+          <FunctionImportMapping FunctionImportName="spAddSearchFilterOrdonareRezultate" FunctionName="OLXModel.Store.spAddSearchFilterOrdonareRezultate" />
+          <FunctionImportMapping FunctionImportName="spAddSearchFilterTipVanzator" FunctionName="OLXModel.Store.spAddSearchFilterTipVanzator" />
+          <FunctionImportMapping FunctionImportName="spAddSearchSession" FunctionName="OLXModel.Store.spAddSearchSession" />
+          <FunctionImportMapping FunctionImportName="spAddSearchText" FunctionName="OLXModel.Store.spAddSearchText" />
+          <FunctionImportMapping FunctionImportName="spAddToFavorite" FunctionName="OLXModel.Store.spAddToFavorite" />
+          <FunctionImportMapping FunctionImportName="spGetAnounceComments" FunctionName="OLXModel.Store.spGetAnounceComments" />
+          <FunctionImportMapping FunctionImportName="spGetAnounceDetails" FunctionName="OLXModel.Store.spGetAnounceDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OLXModel.spGetAnounceDetails_Result">
+                <ScalarProperty Name="NUME_MARCA" ColumnName="NUME_MARCA" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="CULOARE" ColumnName="CULOARE" />
+                <ScalarProperty Name="CUTIE_VITEZE" ColumnName="CUTIE_VITEZE" />
+                <ScalarProperty Name="AN" ColumnName="AN" />
+                <ScalarProperty Name="RULAJ_KM" ColumnName="RULAJ_KM" />
+                <ScalarProperty Name="CAROSERIE" ColumnName="CAROSERIE" />
+                <ScalarProperty Name="COMBUSTIBIL" ColumnName="COMBUSTIBIL" />
+                <ScalarProperty Name="CAPACITATE_MOTOR" ColumnName="CAPACITATE_MOTOR" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetAsociatedWords" FunctionName="OLXModel.Store.spGetAsociatedWords" />
+          <FunctionImportMapping FunctionImportName="spGetAutoBrands" FunctionName="OLXModel.Store.spGetAutoBrands" />
+          <FunctionImportMapping FunctionImportName="spGetCategorieAnunt" FunctionName="OLXModel.Store.spGetCategorieAnunt" />
+          <FunctionImportMapping FunctionImportName="spGetChatsList" FunctionName="OLXModel.Store.spGetChatsList" />
+          <FunctionImportMapping FunctionImportName="spGetFavoriteAnounces" FunctionName="OLXModel.Store.spGetFavoriteAnounces" />
+          <FunctionImportMapping FunctionImportName="spGetIDAnunt" FunctionName="OLXModel.Store.spGetIDAnunt" />
+          <FunctionImportMapping FunctionImportName="spGetIDAnunturiCarePotrivescCuvantul" FunctionName="OLXModel.Store.spGetIDAnunturiCarePotrivescCuvantul" />
+          <FunctionImportMapping FunctionImportName="spGetIDProd" FunctionName="OLXModel.Store.spGetIDProd" />
+          <FunctionImportMapping FunctionImportName="spGetIDUserAnunt" FunctionName="OLXModel.Store.spGetIDUserAnunt" />
+          <FunctionImportMapping FunctionImportName="spGetJudete" FunctionName="OLXModel.Store.spGetJudete" />
+          <FunctionImportMapping FunctionImportName="spGetLogedInUsers" FunctionName="OLXModel.Store.spGetLogedInUsers" />
+          <FunctionImportMapping FunctionImportName="spGetMedieUser" FunctionName="OLXModel.Store.spGetMedieUser" />
+          <FunctionImportMapping FunctionImportName="spGetMedieVoturi" FunctionName="OLXModel.Store.spGetMedieVoturi" />
+          <FunctionImportMapping FunctionImportName="spGetMessagesFromUser" FunctionName="OLXModel.Store.spGetMessagesFromUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OLXModel.spGetMessagesFromUser_Result">
+                <ScalarProperty Name="ID_USER_CURENT" ColumnName="ID_USER_CURENT" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="MESAJ" ColumnName="MESAJ" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetMiniaturaProd" FunctionName="OLXModel.Store.spGetMiniaturaProd">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OLXModel.spGetMiniaturaProd_Result">
+                <ScalarProperty Name="TITLU" ColumnName="TITLU" />
+                <ScalarProperty Name="NUME_CATEGORIE" ColumnName="NUME_CATEGORIE" />
+                <ScalarProperty Name="NUME_SUBCATEGORIE" ColumnName="NUME_SUBCATEGORIE" />
+                <ScalarProperty Name="NUME_ORAS" ColumnName="NUME_ORAS" />
+                <ScalarProperty Name="NUME_JUDET" ColumnName="NUME_JUDET" />
+                <ScalarProperty Name="PRET" ColumnName="PRET" />
+                <ScalarProperty Name="NEGOCIABIL" ColumnName="NEGOCIABIL" />
+                <ScalarProperty Name="CALE_POZA" ColumnName="CALE_POZA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetNrVoturi" FunctionName="OLXModel.Store.spGetNrVoturi" />
+          <FunctionImportMapping FunctionImportName="spGetOraseDinJudet" FunctionName="OLXModel.Store.spGetOraseDinJudet" />
+          <FunctionImportMapping FunctionImportName="spGetPozeAnunt" FunctionName="OLXModel.Store.spGetPozeAnunt" />
+          <FunctionImportMapping FunctionImportName="spGetPromotedAnounces" FunctionName="OLXModel.Store.spGetPromotedAnounces" />
+          <FunctionImportMapping FunctionImportName="spGetPromotedAnouncesByCategory" FunctionName="OLXModel.Store.spGetPromotedAnouncesByCategory" />
+          <FunctionImportMapping FunctionImportName="spGetPromotedAnouncesBySubcategory" FunctionName="OLXModel.Store.spGetPromotedAnouncesBySubcategory" />
+          <FunctionImportMapping FunctionImportName="spGetUserBasicInfo" FunctionName="OLXModel.Store.spGetUserBasicInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OLXModel.spGetUserBasicInfo_Result">
+                <ScalarProperty Name="NUME" ColumnName="NUME" />
+                <ScalarProperty Name="NUME_ORAS" ColumnName="NUME_ORAS" />
+                <ScalarProperty Name="NUME_JUDET" ColumnName="NUME_JUDET" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetUserExtraInfo" FunctionName="OLXModel.Store.spGetUserExtraInfo" />
+          <FunctionImportMapping FunctionImportName="spInsertAsociatedWord" FunctionName="OLXModel.Store.spInsertAsociatedWord" />
+          <FunctionImportMapping FunctionImportName="spInsertSearchText" FunctionName="OLXModel.Store.spInsertSearchText" />
+          <FunctionImportMapping FunctionImportName="spInsertSearchWord" FunctionName="OLXModel.Store.spInsertSearchWord" />
+          <FunctionImportMapping FunctionImportName="spSendMesaj" FunctionName="OLXModel.Store.spSendMesaj" />
+          <FunctionImportMapping FunctionImportName="tranAddVoteAnounce" FunctionName="OLXModel.Store.tranAddVoteAnounce" />
+          <FunctionImportMapping FunctionImportName="tranLogIn" FunctionName="OLXModel.Store.tranLogIn" />
+          <FunctionImportMapping FunctionImportName="tranLogOut" FunctionName="OLXModel.Store.tranLogOut" />
+          <FunctionImportMapping FunctionImportName="tranSignIn" FunctionName="OLXModel.Store.tranSignIn" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

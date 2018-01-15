@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a889b1d97cb641c197318f4478cb608a" Name="Diagram1">
+        <EntityTypeShape EntityType="OLXModel.AUTO_BRANDS" Width="1.5" PointX="13.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_ANOUNCES" Width="1.5" PointX="10.5" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_PHOTOS" Width="1.5" PointX="12.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_PROMOTE_PACKAGES" Width="1.5" PointX="13.5" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_RO_CITIES" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_RO_COUNTIES" Width="1.5" PointX="0.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_SEARCH_CATEGORIES" Width="1.5" PointX="5.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_SEARCH_SUBCATEGORIES" Width="1.5" PointX="8.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_SEARCH_WORDS" Width="1.5" PointX="12.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_USERS" Width="1.5" PointX="5.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.ACCOUNT_MESSAGES" Width="1.5" PointX="7.5" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.ANOUNCE_ACCSES_STATS" Width="1.5" PointX="12.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.ANOUNCE_AUTO_DETAILS" Width="1.5" PointX="15.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.ANOUNCE_FASHION_DETAILS" Width="1.5" PointX="12.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.ANOUNCE_HOUSE_DETAILS" Width="1.5" PointX="12.75" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.ANOUNCE_VOTES" Width="1.5" PointX="12.75" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.ANOUNCE_WORK_DETAILS" Width="1.5" PointX="12.75" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.ANOUNCES_COMMENTS" Width="1.5" PointX="15.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_LOGINS" Width="1.5" PointX="7.5" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_PASSWORDS" Width="1.5" PointX="7.5" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_PROMOTED_ANOUNCES" Width="1.5" PointX="15.75" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.DB_SEARCH_TEXTS" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OLXModel.USER_SEARCH_SESSIONS" Width="1.5" PointX="7.5" PointY="21.5" IsExpanded="true" />
+        <AssociationConnector Association="OLXModel.FK_ANUNT_AUTO_MARCI_MASINI" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_ACCESARI_ANUNTURI" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_ANUNT_AUTO_ANUNTURI" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_ANUNT_IMOBILIARE_ANUNTURI" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_ANUNT_MODA_ANUNTURI" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_ANUNT_MUNCA_ANUNTURI" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_ANUNTURI_CATEGORII" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_ANUNTURI_SUBCATEGORII" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_ANUNTURI_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_COMENTARII_ANUNTURI" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_DB_PHOTOS_DB_ANOUNCES" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_PROMOVATE_ANUNTURI" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_VOTURI_ANUNTURI" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_PROMOVATE_PACHETE" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_ORASE_JUDETE" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_USER_SEARCH_SESSIONS_DB_RO_CITIES" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_USERS_ORASE" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_USER_SEARCH_SESSIONS_DB_RO_COUNTIES" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_USERS_JUDETE" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_SUBCATEGORII_CATEGORII" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_USER_SEARCH_SESSIONS_DB_SEARCH_CATEGORIES" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_SUBCATEGORII_SUBCATEGORII" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_COMENTARII_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_LOGARI_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_MESAJEcorespondent_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_MESAJEinbox_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_PAROLE_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_USER_SEARCH_SESSIONS_DB_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.FK_VOTURI_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.ACCOUNT_FAVORITE_ANOUNCES" ManuallyRouted="false" />
+        <AssociationConnector Association="OLXModel.DB_ASSOCIATED_WORDS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
